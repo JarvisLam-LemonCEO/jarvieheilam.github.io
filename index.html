@@ -5,15 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hei Lam (Jarvis) - Resume</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body>
+<body class="dark-mode">
   <header class="header">
-    <h1>Hei Lam (Jarvis)</h1>
-    <p>Computer Engineering Student</p>
-    <p>[address] | [phone number] | <a href="[linkin]">LinkedIn</a> | <a href="[github]">GitHub</a></p>
+    <div class="container fade-in">
+      <h1>Hei Lam (Jarvis)</h1>
+      <p class="subtitle">Computer Engineering Student</p>
+      <p class="contact">
+        <i class="fas fa-map-marker-alt"></i> [address] | 
+        <i class="fas fa-phone"></i> [phone number] | 
+        <a href="[linkin]" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> | 
+        <a href="[github]" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      </p>
+      <div class="button-group">
+        <button onclick="toggleTheme()" class="theme-toggle">Toggle Theme</button>
+        <a href="resume.pdf" download class="download-btn"><i class="fas fa-file-download"></i> Download Resume</a>
+      </div>
+    </div>
   </header>
 
-  <main>
+  <main class="container fade-in">
     <section>
       <h2>Objective</h2>
       <p>As a dedicated and aspiring Software Engineering Grad school student, my primary goal is to find an internship...</p>
@@ -35,36 +49,38 @@
 
     <section>
       <h2>Project Experience</h2>
-      <div class="project-card" onclick="toggleDetail('chatbot')">
-        <h3>Software Engineering - Online Chatbot</h3>
-        <p class="short">Click to view details</p>
-        <div id="chatbot" class="detail">
-          <ul>
-            <li>Developed login and conversation interface using HTML</li>
-            <li>Presented demo and coordinated team using Discord</li>
-          </ul>
+      <div class="card-grid">
+        <div class="project-card fade-in" onclick="toggleDetail('chatbot')">
+          <h3>💬 Online Chatbot</h3>
+          <p class="short">Team project with HTML login & chat UI</p>
+          <div id="chatbot" class="detail">
+            <ul>
+              <li>Built login and chat UI in HTML</li>
+              <li>Coordinated via weekly Discord meetings</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <div class="project-card" onclick="toggleDetail('compiler')">
-        <h3>Compiler Design - C++ Compiler</h3>
-        <p class="short">Click to view details</p>
-        <div id="compiler" class="detail">
-          <ul>
-            <li>Led project in designing and implementing a C++ compiler</li>
-            <li>Managed team via Discord meetings</li>
-          </ul>
+        <div class="project-card fade-in" onclick="toggleDetail('compiler')">
+          <h3>⚙️ Compiler Design</h3>
+          <p class="short">Designed C++ compiler with team</p>
+          <div id="compiler" class="detail">
+            <ul>
+              <li>Led project using C++</li>
+              <li>Facilitated through Discord discussions</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <div class="project-card" onclick="toggleDetail('rental')">
-        <h3>Database Design - Car Rental System</h3>
-        <p class="short">Click to view details</p>
-        <div id="rental" class="detail">
-          <ul>
-            <li>Built system using HTML, PHP, MySQL, XAMPP</li>
-            <li>Tracked progress and solved issues with team on Discord</li>
-          </ul>
+        <div class="project-card fade-in" onclick="toggleDetail('rental')">
+          <h3>🚗 Car Rental System</h3>
+          <p class="short">PHP/MySQL web system for rentals</p>
+          <div id="rental" class="detail">
+            <ul>
+              <li>Built using HTML, PHP, MySQL, XAMPP</li>
+              <li>Managed issues through consistent Discord communication</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -72,13 +88,13 @@
     <section>
       <h2>Skills</h2>
       <div class="card-container">
-        <div class="card">C / C++ / Java / JavaScript / Python / Verilog / HTML / SQL</div>
-        <div class="card">XCode / Android Studio / VS Code</div>
-        <div class="card">Node.JS / MySQL</div>
-        <div class="card">Apple iWork / MS Office / Google Suite</div>
-        <div class="card">Final Cut Pro</div>
-        <div class="card">macOS / Windows / Ubuntu</div>
-        <div class="card">Languages: Cantonese, Mandarin, English</div>
+        <div class="card">💻 C / C++ / Java / JS / Python / Verilog / HTML / SQL</div>
+        <div class="card">🛠️ XCode / Android Studio / VS Code</div>
+        <div class="card">🌐 Node.JS / MySQL</div>
+        <div class="card">📊 iWork / MS Office / Google Suite</div>
+        <div class="card">🎞 Final Cut Pro</div>
+        <div class="card">🖥️ macOS / Windows / Ubuntu</div>
+        <div class="card">🗣️ Languages: Cantonese, Mandarin, English</div>
       </div>
     </section>
 
@@ -89,16 +105,31 @@
         <li><strong>Quick Learner:</strong> Enthusiastic and curious about learning new technologies</li>
       </ul>
     </section>
+
+    <section>
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mexample" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </form>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Hei Lam (Jarvis)</p>
+    <p>&copy; 2025 Hei Lam (Jarvis) | Portfolio</p>
   </footer>
 
   <script>
     function toggleDetail(id) {
       const detail = document.getElementById(id);
       detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      document.body.classList.toggle('light-mode');
     }
   </script>
 </body>
