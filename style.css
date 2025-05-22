@@ -1,3 +1,4 @@
+
 /* --- style.css --- */
 body {
   font-family: 'Roboto', sans-serif;
@@ -21,7 +22,7 @@ body.light-mode {
 
 body.light-mode .header {
   background: linear-gradient(180deg, #004D80, #00A2FF);
-  color: #fff; /* Make name white in light mode */
+  color: #fff;
 }
 
 .container {
@@ -55,33 +56,6 @@ h2 {
 body.light-mode h2 {
   color: #333;
   border-color: #aaa;
-}
-
-.related-courses {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  margin-top: 1em;
-}
-
-.course-card {
-  background: linear-gradient(135deg, #6c5ce7, #0984e3);
-  color: white;
-  padding: 0.75em 1em;
-  border-radius: 8px;
-  font-size: 0.9em;
-  flex: 0 1 auto;
-  white-space: nowrap;
-  transition: transform 0.2s ease-in-out;
-}
-
-.course-card:hover {
-  transform: scale(1.05);
-}
-
-body.light-mode .course-card {
-  background: linear-gradient(135deg, #007BFF, #00B4D8);
-  color: white;
 }
 
 .card-grid {
