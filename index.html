@@ -30,7 +30,7 @@
   <main class="container fade-in">
     <section class="objective-section">
       <h2>Objective</h2>
-      <p>As a dedicated and aspiring Software Engineering Grad school student, my primary goal is to find an internship...</p>
+      <p>As a dedicated and aspiring Software Engineering Grad school student, my primary goal is to find an internship in the field of computer engineering or software where I can apply my academic knowledge, technical skills, and passion for technology to contribute effectively to a dynamic team. I am eager to gain hands-on experience, solve real-world problems, and continue expanding my skill set while making a meaningful impact on innovative projects within a professional environment.</p>
     </section>
 
     <section class="education-section">
@@ -73,7 +73,12 @@
     <section>
       <h2>Project Experience</h2>
       <div class="card-grid">
-        <div class="project-card fade-in" onclick="openModal('💬 Online Chatbot', ['Built login and chat UI in HTML', 'Coordinated via weekly Discord meetings'])">
+        <div class="project-card"
+          onclick="openModal(
+            '💬 Online Chatbot',
+            ['Built login and chat UI in HTML', 'Coordinated via weekly Discord meetings'],
+            'https://github.com/JarvisLam-LemonCEO/purplrDonkeysProject?tab=readme-ov-file'
+          )">
           <h3>💬 Online Chatbot</h3>
           <p class="short">Team project with HTML login & chat UI</p>
         </div>
@@ -141,8 +146,10 @@
       document.body.classList.toggle('dark-mode');
       document.body.classList.toggle('light-mode');
     }
-    function openModal(title, details) {
+    
+    function openModal(title, details, githubLink = '') {
       document.getElementById("modalTitle").textContent = title;
+      
       const list = document.getElementById("modalList");
       list.innerHTML = '';
       details.forEach(item => {
@@ -150,8 +157,19 @@
         li.textContent = item;
         list.appendChild(li);
       });
+      
+      if (githubLink) {
+        const githubBtn = document.createElement("a");
+        githubBtn.href = githubLink;
+        githubBtn.target = "_blank";
+        githubBtn.className = "github-link";
+        githubBtn.innerHTML = '<i class="fab fa-github"></i> View on GitHub';
+        list.appendChild(githubBtn);
+      }
+      
       document.getElementById("projectModal").style.display = "flex";
     }
+    
     function closeModal() {
       document.getElementById("projectModal").style.display = "none";
     }
