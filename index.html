@@ -15,9 +15,9 @@
       <h1>Hei Lam (Jarvis)</h1>
       <p class="subtitle">Computer Engineering Student</p>
       <p class="contact">
-        <i class="fas fa-map-marker-alt"></i> [address] | 
-        <i class="fas fa-phone"></i> [phone number] | 
-        <a href="[linkin]" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> | 
+        <i class="fas fa-map-marker-alt"></i> [address] |
+        <i class="fas fa-phone"></i> [phone number] |
+        <a href="[linkin]" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
         <a href="[github]" target="_blank"><i class="fab fa-github"></i> GitHub</a>
       </p>
       <div class="button-group">
@@ -50,55 +50,24 @@
     <section>
       <h2>Project Experience</h2>
       <div class="card-grid">
-        <div class="project-card fade-in" onclick="toggleDetail('chatbot')">
+        <div class="project-card fade-in" onclick="openModal('💬 Online Chatbot', ['Built login and chat UI in HTML', 'Coordinated via weekly Discord meetings'])">
           <h3>💬 Online Chatbot</h3>
           <p class="short">Team project with HTML login & chat UI</p>
-          <div id="chatbot" class="detail">
-            <ul>
-              <li>Built login and chat UI in HTML</li>
-              <li>Coordinated via weekly Discord meetings</li>
-            </ul>
-          </div>
         </div>
-
-        <div class="project-card fade-in" onclick="toggleDetail('compiler')">
+        <div class="project-card fade-in" onclick="openModal('⚙️ Compiler Design', ['Led project using C++', 'Facilitated through Discord discussions'])">
           <h3>⚙️ Compiler Design</h3>
           <p class="short">Designed C++ compiler with team</p>
-          <div id="compiler" class="detail">
-            <ul>
-              <li>Led project using C++</li>
-              <li>Facilitated through Discord discussions</li>
-            </ul>
-          </div>
         </div>
-
-        <div class="project-card fade-in" onclick="toggleDetail('rental')">
+        <div class="project-card fade-in" onclick="openModal('🚗 Car Rental System', ['Built using HTML, PHP, MySQL, XAMPP', 'Managed issues through consistent Discord communication'])">
           <h3>🚗 Car Rental System</h3>
           <p class="short">PHP/MySQL web system for rentals</p>
-          <div id="rental" class="detail">
-            <ul>
-              <li>Built using HTML, PHP, MySQL, XAMPP</li>
-              <li>Managed issues through consistent Discord communication</li>
-            </ul>
-          </div>
         </div>
-        
-        <div class="project-card fade-in" onclick="toggleDetail('rental')">
-          <h3>🚗 Car Rental System</h3>
-          <p class="short">PHP/MySQL web system for rentals</p>
-          <div id="rental" class="detail">
-            <ul>
-              <li>Built using HTML, PHP, MySQL, XAMPP</li>
-              <li>Managed issues through consistent Discord communication</li>
-            </ul>
-          </div>
+        <div class="project-card fade-in" onclick="openModal('📦 E-Commerce Demo', ['Developed shopping cart logic', 'Implemented payment simulation flow'])">
+          <h3>📦 E-Commerce Demo</h3>
+          <p class="short">Web-based project simulation</p>
         </div>
-        
-        
       </div>
     </section>
-    
-    
 
     <section>
       <h2>Skills</h2>
@@ -136,15 +105,32 @@
     <p>&copy; 2025 Hei Lam (Jarvis) | Portfolio</p>
   </footer>
 
-  <script>
-    function toggleDetail(id) {
-      const detail = document.getElementById(id);
-      detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
-    }
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <ul id="modalList"></ul>
+    </div>
+  </div>
 
+  <script>
     function toggleTheme() {
       document.body.classList.toggle('dark-mode');
       document.body.classList.toggle('light-mode');
+    }
+    function openModal(title, details) {
+      document.getElementById("modalTitle").textContent = title;
+      const list = document.getElementById("modalList");
+      list.innerHTML = '';
+      details.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+      });
+      document.getElementById("projectModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("projectModal").style.display = "none";
     }
   </script>
 </body>
