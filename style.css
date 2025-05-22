@@ -314,3 +314,58 @@ body {
         gap: 0.25rem;
     }
 }
+:root {
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Fira Code', monospace;
+    --accent-color: #0A84FF;
+}
+
+body {
+    font-family: var(--font-primary);
+    letter-spacing: 0.01em;
+}
+
+.name {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.section-content p,
+.section-content ul,
+.section-content div {
+    margin-bottom: 0.75rem;
+}
+
+.theme-toggle {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 6px var(--shadow-color);
+}
+
+.section,
+.skill-tags span,
+.coursework-grid span {
+    transition: all 0.3s ease-in-out;
+}
+
+.section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow-color);
+}
