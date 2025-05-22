@@ -13,14 +13,14 @@ body.light-mode {
 }
 
 .header {
-  background: linear-gradient(120deg, #1a1a40, #3a0ca3);
+  background: linear-gradient(180deg, #000000, #3B3B3B);
   color: #fff;
   padding: 2em 1em;
   text-align: center;
 }
 
 body.light-mode .header {
-  background: linear-gradient(120deg, #e0e0f0, #7d5fff);
+  background: linear-gradient(180deg, #004D80, #00A2FF);
   color: #111;
 }
 
@@ -58,18 +58,22 @@ body.light-mode h2 {
 }
 
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
   gap: 1.2em;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1em;
 }
 
 .project-card {
+  flex: 0 0 280px;
   background-color: #1e1f26;
   padding: 1em;
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   transition: transform 0.2s, background 0.3s;
+  scroll-snap-align: start;
 }
 
 .project-card:hover {
@@ -79,7 +83,7 @@ body.light-mode h2 {
 
 body.light-mode .project-card {
   background-color: #f3f3f3;
-  color: #222;
+  color: #000;
 }
 
 .detail {
