@@ -59,21 +59,22 @@ body.light-mode h2 {
 
 .card-grid {
   display: flex;
-  gap: 1.2em;
+  flex-wrap: nowrap;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  gap: 1.2em;
   padding-bottom: 1em;
+  scroll-snap-type: x mandatory;
 }
 
 .project-card {
   flex: 0 0 280px;
+  scroll-snap-align: start;
   background-color: #1e1f26;
   padding: 1em;
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   transition: transform 0.2s, background 0.3s;
-  scroll-snap-align: start;
 }
 
 .project-card:hover {
@@ -84,6 +85,19 @@ body.light-mode h2 {
 body.light-mode .project-card {
   background-color: #f3f3f3;
   color: #000;
+}
+
+.card-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-grid::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.card-grid::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .detail {
