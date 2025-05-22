@@ -1,53 +1,316 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+:root {
+    /* Light theme colors */
+    --bg-color: #f5f5f7;
+    --text-color: #1d1d1f;
+    --primary-color: #0066cc;
+    --secondary-color: #86868b;
+    --card-bg: #ffffff;
+    --border-color: #d2d2d7;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --icon-color: #1d1d1f;
+}
+
+[data-theme="dark"] {
+    /* Dark theme colors */
+    --bg-color: #1d1d1f;
+    --text-color: #f5f5f7;
+    --primary-color: #2997ff;
+    --secondary-color: #a1a1a6;
+    --card-bg: #2c2c2e;
+    --border-color: #3a3a3c;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --icon-color: #f5f5f7;
+}
+
+* {
     margin: 0;
     padding: 0;
-    color: #333;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #f4f4f4;
-    padding-bottom: 20px;
-}
-
-h1 {
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 0;
     margin: 0;
-    color: #2c3e50;
 }
 
-.contact a {
-    margin: 0 5px;
-    color: #3498db;
-    text-decoration: none;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-section {
-    margin-bottom: 30px;
+.header {
+    margin-bottom: 3rem;
+    position: relative;
 }
 
-h2 {
-    color: #2c3e50;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
+.header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.edu-item, .project {
-    margin-bottom: 15px;
+.name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
 }
 
-ul {
-    padding-left: 20px;
+.nickname {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--secondary-color);
 }
 
-footer {
+.title {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    transition: transform 0.2s;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--icon-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.section {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.education-item {
+    margin-bottom: 2rem;
+}
+
+.education-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.institution, .date {
+    color: var(--secondary-color);
+    margin-bottom: 0.25rem;
+}
+
+.details {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.coursework {
+    margin-top: 2rem;
+}
+
+.coursework h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.coursework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+}
+
+.coursework-grid span {
+    background-color: rgba(0, 102, 204, 0.1);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
     text-align: center;
-    margin-top: 30px;
-    color: #7f8c8d;
-    font-size: 0.9em;
+}
+
+.project-item {
+    margin-bottom: 2rem;
+}
+
+.project-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-date {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    font-weight: normal;
+}
+
+.project-item ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+.project-item li {
+    margin-bottom: 0.5rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-category {
+    margin-bottom: 1rem;
+}
+
+.skill-category h4 {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tags span {
+    background-color: rgba(0, 102, 204, 0.1);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.strength-item {
+    margin-bottom: 1.5rem;
+}
+
+.strength-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--primary-color);
+}
+
+.footer {
+    margin-top: 3rem;
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    padding: 1.5rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .name {
+        font-size: 2rem;
+    }
+    
+    .nickname {
+        font-size: 1.25rem;
+    }
+    
+    .title {
+        font-size: 1.1rem;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .coursework-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .section {
+        padding: 1.5rem;
+    }
+    
+    .project-item h3 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
 }
