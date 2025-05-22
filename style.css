@@ -390,3 +390,22 @@ body.light-mode .close-btn:hover {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/*photo*/
+.headshot-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4361ee;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1em;
+  transition: transform 0.3s ease-in-out;
+}
+.headshot-img:hover {
+  transform: scale(1.05);
+}
+
+body.light-mode .headshot-img {
+  border-color: #00A2FF;
+}
