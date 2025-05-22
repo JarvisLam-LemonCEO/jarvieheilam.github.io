@@ -54,6 +54,49 @@ body.light-mode .course-card {
   color: white;
 }
 
+/*educstion section*/
+.education-section {
+  margin-top: 2em;
+}
+
+.education-entry {
+  background-color: #1e1f26;
+  padding: 1em 1.5em;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.education-entry:hover {
+  transform: scale(1.02);
+}
+
+.education-entry h3 {
+  margin: 0 0 0.25em;
+  font-size: 1.1em;
+  color: #aad4ff;
+}
+
+.education-entry p {
+  margin: 0.25em 0;
+  font-size: 0.95em;
+  color: #ccc;
+}
+
+body.light-mode .education-entry {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+body.light-mode .education-entry h3 {
+  color: #004D80;
+}
+
+body.light-mode .education-entry p {
+  color: #444;
+}
+
 .container {
   max-width: 960px;
   margin: 0 auto;
