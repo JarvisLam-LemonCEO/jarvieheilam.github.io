@@ -1,81 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hei Lam (Jarvis) | Computer Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Hei Lam (Jarvis)</h1>
-        <p>Computer Engineering Student | Software Engineering (MS)</p>
-        <div class="contact">
-            <a href="[LinkedIn URL]">LinkedIn</a> | 
-            <a href="[GitHub URL]">GitHub</a> | 
-            <a href="mailto:[Your Email]">Email</a>
-        </div>
-    </header>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="name">Hei Lam <span class="nickname">(Jarvis)</span></h1>
+                <p class="title">Computer Engineering Student</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> [Your Address]</p>
+                    <p><i class="fas fa-phone"></i> [Your Phone Number]</p>
+                    <div class="social-links">
+                        <a href="[Your LinkedIn URL]" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="[Your GitHub URL]" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
 
-    <section id="objective">
-        <h2>Objective</h2>
-        <p>
-            Aspiring Software Engineering graduate student seeking an internship in computer/software engineering. 
-            Passionate about applying academic knowledge to real-world challenges, expanding my skills, and contributing to innovative projects.
-        </p>
-    </section>
+        <main class="main-content">
+            <section class="section objective">
+                <h2 class="section-title"><i class="fas fa-bullseye"></i> Objective</h2>
+                <div class="section-content">
+                    <p>As a dedicated and aspiring Software Engineering Grad school student, my primary goal is to find an internship in the field of computer engineering or software where I can apply my academic knowledge, technical skills, and passion for technology to contribute effectively to a dynamic team. I am eager to gain hands-on experience, solve real-world problems, and continue expanding my skill set while making a meaningful impact on innovative projects within a professional environment.</p>
+                </div>
+            </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <div class="edu-item">
-            <h3>San Jose State University</h3>
-            <p><strong>B.S. Computer Engineering</strong> | Aug 2020 - Dec 2024</p>
-            <p>GPA: 3.24/4.00</p>
-        </div>
-        <div class="edu-item">
-            <h3>San Jose State University</h3>
-            <p><strong>M.S. Software Engineering</strong> | Jan 2024 - Present</p>
-        </div>
-    </section>
+            <section class="section education">
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="section-content">
+                    <div class="education-item">
+                        <h3>B.S., Computer Engineering</h3>
+                        <p class="institution">San Jose State University, San Jose, CA</p>
+                        <p class="date">August 2020 - December 2024</p>
+                        <p class="details">Charles W. Davidson College of Engineering</p>
+                        <p class="details">SJSU GPA: 3.115/4.00 | Overall GPA: 3.237/4.00</p>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h3>MS, Software Engineering</h3>
+                        <p class="institution">San Jose State University, San Jose, CA</p>
+                        <p class="date">January 2024 - Present</p>
+                        <p class="details">Charles W. Davidson College of Engineering</p>
+                    </div>
+                    
+                    <div class="coursework">
+                        <h4>Related Coursework:</h4>
+                        <div class="coursework-grid">
+                            <span>Programming Concepts and Methodology</span>
+                            <span>Object-Oriented Concepts and Methodology</span>
+                            <span>Assembly Language Programming</span>
+                            <span>Algorithms and Data Structure Design</span>
+                            <span>Electronics for Computing Systems</span>
+                            <span>Digital Design</span>
+                            <span>Advanced Algorithm Design</span>
+                            <span>Software Engineering</span>
+                            <span>Operating Systems Design</span>
+                            <span>Microprocessor Design</span>
+                            <span>Computer Networks</span>
+                            <span>Compiler Design</span>
+                            <span>Information Security</span>
+                            <span>Database Systems</span>
+                            <span>Computer Architecture and Design</span>
+                            <span>Mobile Software Engineering</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Online Chatbot (Software Engineering, Fall 2022)</h3>
-            <ul>
-                <li>Developed a chatbot with a team, designed login & conversation UI in HTML.</li>
-                <li>Led Discord meetings for task delegation and progress tracking.</li>
-            </ul>
-        </div>
-        <div class="project">
-            <h3>C++ Compiler (Compiler Design, Spring 2023)</h3>
-            <ul>
-                <li>Led team in designing a compiler in C++.</li>
-                <li>Managed issue resolution via Discord meetings.</li>
-            </ul>
-        </div>
-        <div class="project">
-            <h3>Car Rental System (Database Design, Fall 2023)</h3>
-            <ul>
-                <li>Built a web-based system using HTML, PHP, MySQL, and XAMPP.</li>
-                <li>Organized team meetings for troubleshooting.</li>
-            </ul>
-        </div>
-    </section>
+            <section class="section projects">
+                <h2 class="section-title"><i class="fas fa-code"></i> Project Experience</h2>
+                <div class="section-content">
+                    <div class="project-item">
+                        <h3>Software Engineering, SJSU <span class="project-date">Fall 2022</span></h3>
+                        <ul>
+                            <li>Developed an online chatbot as part of a team and presented a successful team demonstration.</li>
+                            <li>Facilitated team progress through brainstorming, delegating tasks in weekly Discord meetings, and designed the chatbot's login and conversation interface using HTML.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-item">
+                        <h3>Compiler Design, SJSU <span class="project-date">Spring 2023</span></h3>
+                        <ul>
+                            <li>Took the lead role in designing and developing a compiler in C++, overseeing project progress and issue resolution through regular Discord meetings.</li>
+                            <li>Acquired substantial expertise in C++.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-item">
+                        <h3>Database Design, SJSU <span class="project-date">Fall 2023</span></h3>
+                        <ul>
+                            <li>Collaboratively designed and created a web-based car rental system interface using HTML, PHP, MySQL, and XAMPP.</li>
+                            <li>Organized consistent Discord meetings to track progress and troubleshoot issues.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li><strong>Languages:</strong> C, C++, Java, JavaScript, Python, Verilog, HTML, SQL</li>
-            <li><strong>Tools:</strong> VS Code, XCode, Android Studio, Node.js, MySQL</li>
-            <li><strong>Other:</strong> Final Cut Pro, Linux, macOS, Windows</li>
-            <li><strong>Languages:</strong> Native Cantonese & Mandarin, Fluent English</li>
-        </ul>
-    </section>
+            <section class="section skills">
+                <h2 class="section-title"><i class="fas fa-cogs"></i> Skills</h2>
+                <div class="section-content">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Programming:</h4>
+                            <div class="skill-tags">
+                                <span>C</span>
+                                <span>C++</span>
+                                <span>Java</span>
+                                <span>JavaScript</span>
+                                <span>Python</span>
+                                <span>Verilog</span>
+                                <span>HTML</span>
+                                <span>SQL</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>IDE Software:</h4>
+                            <div class="skill-tags">
+                                <span>XCode</span>
+                                <span>Android Studio</span>
+                                <span>VS Code</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Server:</h4>
+                            <div class="skill-tags">
+                                <span>Node.JS</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Database:</h4>
+                            <div class="skill-tags">
+                                <span>MySQL</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Office Suite:</h4>
+                            <div class="skill-tags">
+                                <span>Apple iWork</span>
+                                <span>Microsoft Office</span>
+                                <span>Google Suite</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Video Editing:</h4>
+                            <div class="skill-tags">
+                                <span>Final Cut Pro</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>OS Operation:</h4>
+                            <div class="skill-tags">
+                                <span>macOS</span>
+                                <span>Windows</span>
+                                <span>Linux (Ubuntu)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Languages:</h4>
+                            <div class="skill-tags">
+                                <span>Native Cantonese</span>
+                                <span>Native Mandarin</span>
+                                <span>Fluent English</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <footer>
-        <p>© 2024 Hei Lam (Jarvis) | Hosted on GitHub Pages</p>
-    </footer>
+            <section class="section strengths">
+                <h2 class="section-title"><i class="fas fa-star"></i> Strengths</h2>
+                <div class="section-content">
+                    <div class="strength-item">
+                        <h3>Problem Solving & Decision Making</h3>
+                        <p>Able to analyze situations comprehensively to arrive at the best solution</p>
+                    </div>
+                    <div class="strength-item">
+                        <h3>Passionate & Quick Learner</h3>
+                        <p>Fueled by my curiosity and enthusiasm to learn as many useful new skills as possible</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; <span id="year"></span> Hei Lam (Jarvis). All rights reserved.</p>
+            <p>Hosted on GitHub Pages</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
