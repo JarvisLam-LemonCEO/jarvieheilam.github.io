@@ -47,52 +47,46 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact Form Handling
+// Modern Fetch API with proper headers
 document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
     const form = e.target;
-    const submitBtn = form.querySelector('button[type="submit"]');
+    const submitBtn = document.getElementById('submitBtn');
     const responseDiv = document.getElementById('formResponse');
     
-    // Save original button content
-    const originalBtnContent = submitBtn.innerHTML;
-    
-    // Update button state
-    submitBtn.disabled = true;
+    // Show loading state
+    const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    responseDiv.style.display = 'none';
+    submitBtn.disabled = true;
     
     try {
-        const formData = new FormData(form);
+        const formData = new URLSearchParams();
+        formData.append('name', form.name.value);
+        formData.append('email', form.email.value);
+        formData.append('message', form.message.value);
         
         const response = await fetch(form.action, {
             method: 'POST',
-            body: formData,
             headers: {
-                'Accept': 'application/json'
-            }
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData
         });
-        
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
         
         const result = await response.json();
         
-        if (result.success) {
-            responseDiv.className = 'form-response success';
-            responseDiv.textContent = result.success;
-            form.reset();
-        } else {
-            throw new Error(result.error || 'Failed to send message');
-        }
+        if (!response.ok) throw new Error(result.error || 'Server error');
+        
+        responseDiv.textContent = result.success || 'Message sent!';
+        responseDiv.className = 'form-response success';
+        form.reset();
     } catch (error) {
-        responseDiv.className = 'form-response error';
         responseDiv.textContent = error.message;
+        responseDiv.className = 'form-response error';
     } finally {
-        responseDiv.style.display = 'block';
+        submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnContent;
+        responseDiv.style.display = 'block';
     }
 });
