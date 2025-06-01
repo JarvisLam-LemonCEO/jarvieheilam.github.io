@@ -409,3 +409,202 @@ body.light-mode .close-btn:hover {
 body.light-mode .headshot-img {
   border-color: #00A2FF;
 }
+
+/* Project card*/
+
+/* Project Cards Section */
+.project-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background-color: #1e1f26;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+body.light-mode .project-card {
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+body.light-mode .project-card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.project-card-image {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+}
+
+.project-card-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #aad4ff;
+}
+
+body.light-mode .project-card-content h3 {
+  color: #3a0ca3;
+}
+
+.project-card-content .short {
+  margin: 0 0 1rem;
+  color: #ccc;
+  font-size: 0.9rem;
+  flex-grow: 1;
+}
+
+body.light-mode .project-card-content .short {
+  color: #666;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-tags span {
+  background: rgba(255,255,255,0.1);
+  color: #aad4ff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+body.light-mode .project-tags span {
+  background: rgba(58, 12, 163, 0.1);
+  color: #3a0ca3;
+}
+
+.project-links {
+  margin-top: auto;
+}
+
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #aad4ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.05);
+}
+
+.project-links a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+  text-decoration: none;
+}
+
+body.light-mode .project-links a {
+  color: #3a0ca3;
+  background: rgba(58, 12, 163, 0.05);
+}
+
+body.light-mode .project-links a:hover {
+  color: #1a064f;
+  background: rgba(58, 12, 163, 0.1);
+}
+
+/* Card Grid Layout */
+.card-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.card-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-grid::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.card-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card-grid::after {
+  content: '';
+  flex: 0 0 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-card {
+    min-width: 280px;
+  }
+  
+  .project-card-image {
+    height: 120px;
+    font-size: 2.5rem;
+  }
+  
+  .project-card-content {
+    padding: 1rem;
+  }
+}
+
+/*Poject card image*/
+
+.project-card-image {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  /* Optional: Add a dark overlay for better icon visibility */
+  position: relative;
+}
+
+.project-card-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+.project-card-image i {
+  position: relative;
+  z-index: 1;
+  font-size: 3rem;
+}
