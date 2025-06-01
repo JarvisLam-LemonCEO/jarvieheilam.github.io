@@ -47,3 +47,52 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Contact Form Handling
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const responseDiv = document.getElementById('formResponse');
+    
+    // Save original button content
+    const originalBtnContent = submitBtn.innerHTML;
+    
+    // Update button state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    responseDiv.style.display = 'none';
+    
+    try {
+        const formData = new FormData(form);
+        
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            responseDiv.className = 'form-response success';
+            responseDiv.textContent = result.success;
+            form.reset();
+        } else {
+            throw new Error(result.error || 'Failed to send message');
+        }
+    } catch (error) {
+        responseDiv.className = 'form-response error';
+        responseDiv.textContent = error.message;
+    } finally {
+        responseDiv.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnContent;
+    }
+});
