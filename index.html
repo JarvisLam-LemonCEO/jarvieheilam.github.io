@@ -211,14 +211,17 @@
       </ul>
     </section>
 
-    <section>
+    <section class="contact-section">
       <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/mexample" method="POST" class="contact-form">
+      <form id="contactForm" class="contact-form" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+        <button type="submit" id="submitBtn">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
       </form>
+      <div id="formResponse" class="form-response"></div>
     </section>
   </main>
 
