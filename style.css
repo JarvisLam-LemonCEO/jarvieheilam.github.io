@@ -655,25 +655,3 @@ body.light-mode .links-container a:hover {
   font-size: 0.9rem;
 }
 
-/*youtube*/
-/* Optional: Special styling for YouTube links */
-.links-container a[href*="youtube.com"] {
-  background: rgba(255, 0, 0, 0.1); /* YouTube red */
-  color: #ff4d4d;
-}
-
-.links-container a[href*="youtube.com"]:hover {
-  background: rgba(255, 0, 0, 0.2);
-  color: #ff0000;
-}
-
-/* Light mode version */
-body.light-mode .links-container a[href*="youtube.com"] {
-  background: rgba(255, 0, 0, 0.1);
-  color: #cc0000;
-}
-
-body.light-mode .links-container a[href*="youtube.com"]:hover {
-  background: rgba(255, 0, 0, 0.2);
-  color: #990000;
-}
