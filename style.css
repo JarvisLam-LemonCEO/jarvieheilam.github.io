@@ -616,9 +616,4 @@ body.light-mode .project-links a:hover {
   margin-top: 10px;    /* Optional: Adds space above the links */
 }
 
-.project-links a {
-  display: inline-flex; /* Aligns icon and text properly */
-  align-items: center;  /* Vertically centers icon and text */
-  gap: 5px;            /* Adds space between icon and text */
-}
 
