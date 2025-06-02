@@ -610,10 +610,47 @@ body.light-mode .project-links a:hover {
 }
 
 /* demo */
+/* Add this to your existing CSS */
 .links-container {
-  display: flex;        /* Makes children align horizontally */
-  gap: 10px;           /* Adds spacing between links */
-  margin-top: 10px;    /* Optional: Adds space above the links */
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
+.links-container a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
 
+/* Dark mode styles */
+.links-container a {
+  background: rgba(255, 255, 255, 0.1);
+  color: #aad4ff;
+}
+
+.links-container a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Light mode styles */
+body.light-mode .links-container a {
+  background: rgba(58, 12, 163, 0.1);
+  color: #3a0ca3;
+}
+
+body.light-mode .links-container a:hover {
+  background: rgba(58, 12, 163, 0.2);
+  color: #1a064f;
+}
+
+/* Icon styles */
+.links-container a i {
+  font-size: 0.9rem;
+}
