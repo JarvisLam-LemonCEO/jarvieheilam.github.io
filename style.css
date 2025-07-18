@@ -295,21 +295,6 @@ body.light-mode footer {
   background-color: #3a0ca3;
 }
 
-.download-btn {
-  margin: 10px 5px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  background-color: #4361ee;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.download-btn:hover {
-  background-color: #3a0ca3;
-}
 .contact-form {
   display: flex;
   flex-direction: column;
