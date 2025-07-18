@@ -2,38 +2,40 @@
 const themeToggle = document.getElementById('theme-toggle');
 const icon = themeToggle.querySelector('i');
 
-// Check for saved theme preference or use system preference
-const currentTheme = localStorage.getItem('theme') || 
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-document.documentElement.setAttribute('data-theme', currentTheme);
-
-// Update icon based on current theme
-if (currentTheme === 'dark') {
+// Function to set theme and icon
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  
+  // Update body classes for backward compatibility
+  if (theme === 'dark') {
+    document.body.classList.add('dark-mode');
+    document.body.classList.remove('light-mode');
     icon.classList.remove('fa-moon');
     icon.classList.add('fa-sun');
-} else {
+  } else {
+    document.body.classList.add('light-mode');
+    document.body.classList.remove('dark-mode');
     icon.classList.remove('fa-sun');
     icon.classList.add('fa-moon');
+  }
 }
+
+// Check for saved theme preference or use system preference
+const currentTheme = localStorage.getItem('theme') || 
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+// Initialize theme
+setTheme(currentTheme);
 
 // Toggle theme on button click
 themeToggle.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    
-    // Update icon
-    if (newTheme === 'dark') {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-    }
+    setTheme(newTheme);
 });
 
+// Rest of your existing JavaScript code remains the same...
 // Set current year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
