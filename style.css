@@ -279,7 +279,28 @@ body.light-mode footer {
   color: #666;
 }
 
-.theme-toggle, .download-btn {
+.theme-toggle {
+  margin: 10px 5px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #4361ee;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.theme-toggle:hover {
+  background-color: #3a0ca3;
+  transform: scale(1.1);
+}
+
+.download-btn {
   margin: 10px 5px;
   padding: 10px 15px;
   border: none;
@@ -291,10 +312,9 @@ body.light-mode footer {
   transition: background 0.3s;
 }
 
-.theme-toggle:hover, .download-btn:hover {
+.download-btn:hover {
   background-color: #3a0ca3;
 }
-
 .contact-form {
   display: flex;
   flex-direction: column;
