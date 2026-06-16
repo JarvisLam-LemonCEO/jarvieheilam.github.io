@@ -3,486 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hei Lam (Jarvis) - Resume</title>
+  <meta name="description" content="Hei Lam (Jarvis) — Software Engineering graduate student and full-stack / AI systems developer portfolio." />
+  <title>Hei Lam (Jarvis) | Software Engineer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
-  <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body class="dark-mode">
-  <header class="header">
-    <div class="container fade-in">
-      <img src="headshot.jpg" alt="Headshot of Hei Lam (Jarvis)" class="headshot-img" />
-      <h1>Hei Lam (Jarvis)</h1>
-      <p class="subtitle">Software Engineering Master Student</p>
-      <p class="contact">
-        <i class="fas fa-map-marker-alt"></i> jarvislamhk@gmail.com | 
-        
-        <a href="https://www.linkedin.com/in/hei-lam-643738223/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
-        <a href="https://github.com/JarvisLam-LemonCEO" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      </p>
-      <div class="button-group">
-       <button onclick="toggleTheme()" class="theme-toggle">Light/Dark Mode</button>
-        <a href="resume.pdf" download class="download-btn"><i class="fas fa-file-download"></i> Download Resume</a>
+<body>
+  <div class="page-glow page-glow-one"></div>
+  <div class="page-glow page-glow-two"></div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home">HL<span>.</span></a>
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
+      <div class="nav-links" id="navLinks">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <main class="container fade-in">
-    <section class="objective-section">
-      <h2>Objective</h2>
-      <p>As a dedicated and aspiring Software Engineering Grad school student, my primary goal is to find an internship in the field of computer engineering or software where I can apply my academic knowledge, technical skills, and passion for technology to contribute effectively to a dynamic team. I am eager to gain hands-on experience, solve real-world problems, and continue expanding my skill set while making a meaningful impact on innovative projects within a professional environment.</p>
-    </section>
-
-    <section class="education-section">
-      <h2>Education</h2>
-      
-      <div class="education-entry">
-        <h3>B.S., Computer Engineering</h3>
-        <p>San Jose State University – Aug 2020 to Dec 2024</p>
-      
+  <main id="home">
+    <section class="hero container section-pad">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Software Engineering M.S. Student · San Jose State University</p>
+        <h1>Hi, I’m <span>Hei Lam</span> — I build practical software with AI, cloud, web, and mobile systems.</h1>
+        <p class="hero-text">I’m seeking software engineering and computer engineering internship opportunities where I can turn academic depth into reliable, user-focused products.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="resume.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
+          <a class="btn secondary" href="#projects"><i class="fa-solid fa-layer-group"></i> View Projects</a>
+        </div>
+        <div class="social-strip" aria-label="Profile links">
+          <a href="mailto:jarvislamhk@gmail.com"><i class="fa-solid fa-envelope"></i> jarvislamhk@gmail.com</a>
+          <a href="https://www.linkedin.com/in/hei-lam-643738223/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/JarvisLam-LemonCEO" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
       </div>
-      
-      <div class="education-entry">
-        <h3>M.S., Software Engineering</h3>
-        <p>San Jose State University – Jan 2024 to Present</p>
-  
+
+      <aside class="profile-card reveal">
+        <div class="headshot-wrap">
+          <img src="headshot.jpg" alt="Headshot of Hei Lam" />
+        </div>
+        <h2>Hei Lam (Jarvis)</h2>
+        <p>Software Engineering Graduate Student</p>
+        <div class="quick-stats">
+          <div><strong>10+</strong><span>Projects</span></div>
+          <div><strong>AI</strong><span>Systems</span></div>
+          <div><strong>Full</strong><span>Stack</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="container about-grid section-pad-sm">
+      <article class="panel reveal">
+        <h2>Professional Objective</h2>
+        <p>Dedicated software engineering graduate student with a computer engineering foundation, strong project execution experience, and a focus on building secure, scalable, and useful applications. I enjoy solving real-world problems through full-stack development, AI integration, distributed systems, and mobile platforms.</p>
+      </article>
+      <article class="panel reveal">
+        <h2>Strengths</h2>
+        <ul class="clean-list">
+          <li><i class="fa-solid fa-circle-check"></i> Problem solving across software, systems, and product workflows</li>
+          <li><i class="fa-solid fa-circle-check"></i> Fast learner with curiosity for emerging AI and cloud tools</li>
+          <li><i class="fa-solid fa-circle-check"></i> Collaborative teammate with experience coordinating project delivery</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="container section-pad" id="projects">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Selected work</p>
+        <h2>Project Experience</h2>
+        <p>Hands-on builds across AI platforms, distributed inference, cybersecurity, web apps, and mobile engineering.</p>
       </div>
+      <div class="project-grid" id="projectGrid"></div>
     </section>
 
-    <section>
-      <h2>Related Coursework</h2>
-      <div class="related-courses">
-        <div class="course-card">Programming Concepts and Methodology</div>
-        <div class="course-card">Object-Oriented Concepts and Methodology</div>
-        <div class="course-card">Algorithms and Data Structure Design</div>
-        <div class="course-card">Advanced Algorithms Design</div>
-        <div class="course-card">Data Structures</div>
-        <div class="course-card">Assembly Language Programming</div>
-        <div class="course-card">Electronics for Computing Systems</div>
-        <div class="course-card">Digital Design</div>
-        <div class="course-card">Software Engineering</div>
-        <div class="course-card">Operating Systems Design</div>
-        <div class="course-card">Microprocessor Design</div>
-        <div class="course-card">Computer Networks</div>
-        <div class="course-card">Compiler Design</div>
-        <div class="course-card">Information Security</div>
-        <div class="course-card">Database Systems</div>
-        <div class="course-card">Computer Architecture and Design</div>
-        <div class="course-card">Mobile Software Engineering</div>
-        <div class="course-card">Information Security</div>
-        <div class="course-card">Real-Time Embedded System Co-Design</div>
-        <div class="course-card">Software Systems Engineering</div>
-        <div class="course-card">Network Security and Applications</div>
-        <div class="course-card">Enterprise Software Platforms</div>
-
+    <section class="container section-pad-sm" id="skills">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Technical toolkit</p>
+        <h2>Skills</h2>
       </div>
-    </section>
-
-    <section>
-      <h2>Project Experience</h2>
-      <div class="card-grid">
-        <!-- Project Card 1 - Online Chatbot -->
-        <div class="project-card" onclick="openModal('💬 Online Chatbot', ['Built login and chat UI in HTML', 'Coordinated via weekly Discord meetings'], 'https://github.com/JarvisLam-LemonCEO/purplrDonkeysProject?tab=readme-ov-file')">
-          <div class="project-card-image" style="background-image: url('PurpleDonkeys.jpg')">
-            <i class="fas fa-comments"></i>
-          </div>
-          <div class="project-card-content">
-            <h3>Online Chatbot</h3>
-            <p class="short">Team project with HTML login & chat UI</p>
-            <div class="project-tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </div>
-            
-            <div class="links-container">
-              <a href="https://github.com/JarvisLam-LemonCEO/purplrDonkeysProject?tab=readme-ov-file" target="_blank" onclick="event.stopPropagation()">
-                <i class="fab fa-github"></i> Code
-              </a> 
-              <a href="https://www.youtube.com/watch?v=jqPJcvOb0Lg" target="_blank" onclick="event.stopPropagation()">
-                <i class="fas fa-youtube"></i> Demo
-              </a>
-            </div>
-            
-          </div>
-        </div>
-
-
-        <!-- PixelVault -->
-
-        <div class="project-card" onclick="openModal(
-  'PixelVault — AI-Powered Intelligent Media Gallery Platform',
-  [
-    'AI-powered photo retouching and image transformation',
-    'Drag-and-drop album rearrangement system',
-    'Cloud-based media upload and gallery management',
-    'Responsive dark/light mode UI/UX design',
-    'Firebase Authentication and Firestore integration',
-    'Cloudinary media storage infrastructure',
-    'Interactive comments and social engagement system',
-    'Modern React + Vite SPA architecture'
-  ],
-  'https://github.com/JarvisLam-LemonCEO/CMPE280Hackathon'
-)">
-  
-  <div class="project-card-image" style="background-image: url('pixelvault.png')">
-    <i class="fas fa-images"></i>
-  </div>
-
-  <div class="project-card-content">
-    
-    <h3>PixelVault — AI-Powered Intelligent Media Gallery Platform</h3>
-
-    <p class="short">
-      PixelVault is a modern AI-enhanced media management platform featuring cloud-based gallery organization, drag-and-drop album management, AI photo retouching, and responsive UI/UX design.
-    </p>
-
-    <div class="project-tags">
-      <span>React</span>
-      <span>Vite</span>
-      <span>Firebase</span>
-      <span>Cloudinary</span>
-      <span>Hugging Face AI</span>
-      <span>Tailwind CSS</span>
-    </div>
-
-    <div class="links-container">
-      
-      <a href="https://github.com/JarvisLam-LemonCEO/CMPE280Hackathon" 
-         target="_blank" 
-         onclick="event.stopPropagation()">
-        <i class="fab fa-github"></i> Code
-      </a>
-
-      <a href="https://www.youtube.com/watch?v=FnxwcjPU384" 
-         target="_blank" 
-         onclick="event.stopPropagation()">
-        <i class="fas fa-globe"></i> Demo
-      </a>
-
-    </div>
-
-  </div>
-</div>
-
-        
-        <!-- Lumina -->
-        <div class="project-card" onclick="openModal('Lumina — Distributed Split Inference', ['Distributed LLM inference across three machines', 'Dynamic VRAM-based layer splitting', 'Tracker service with heartbeat, health monitoring, and request tracing'], 'https://github.com/JarvisLam-LemonCEO/CMPE273-Project')">
-  <div class="project-card-image" style="background-image: url('Lumina.png')">
-    <i class="fas fa-network-wired"></i>
-  </div>
-
-  <div class="project-card-content">
-    <h3>Lumina — Distributed Split Inference</h3>
-    <p class="short">
-      A distributed LLM inference system that splits transformer layers across multiple machines and dynamically assigns workloads based on available VRAM.
-    </p>
-
-    <div class="project-tags">
-      <span>Python</span>
-      <span>FastAPI</span>
-      <span>Docker</span>
-      <span>React</span>
-      <span>LLM</span>
-      <span>AWS</span>
-    </div>
-
-    <div class="links-container">
-      <a href="https://github.com/JarvisLam-LemonCEO/CMPE273-Project" target="_blank" onclick="event.stopPropagation()">
-        <i class="fab fa-github"></i> Code
-      </a>
-
-      <a href="https://youtu.be/7Ucet6pAAik" target="_blank" onclick="event.stopPropagation()">
-        <i class="fas fa-youtube"></i> Demo
-      </a>
-    </div>
-  </div>
-</div>
-
-
-
-          <!-- Phishing Detection System-->
-        <div class="project-card" onclick="openModal('Phishing Detection System (A Python GUI Application)', ['Phishing Email Analysis with heuristic, anomaly and LLM', 'Dataset training', 'Python GUI Application'], 'https://github.com/JarvisLam-LemonCEO/CMPE279Project.git')">
-          <div class="project-card-image" style="background-image: url('FDS.jpg')">
-            <i class="fas fa-robot"></i>
-          </div>
-          <div class="project-card-content">
-            <h3>Phishing Detection System (A Python GUI Application)</h3>
-            <p class="short">Phishing Detection System scans phishing emails with heuristic, anomaly, and LLM </p>
-            <div class="project-tags">
-              <span>Python</span>
-              <span>LM Studio</span>
-              <span>LLM (OpenAI)</span>
-            </div>
-            
-            <div class="links-container">
-              <a href="https://github.com/JarvisLam-LemonCEO/CMPE279Project.git" target="_blank" onclick="event.stopPropagation()">
-                <i class="fab fa-github"></i> Code
-              </a> 
-              <a href="https://youtu.be/Dff0YanQcLU" target="_blank" onclick="event.stopPropagation()">
-                <i class="fas fa-youtube"></i> Demo
-              </a>
-            </div>
-            </div>
-          </div>
-
-
-                <!-- Project card  LLM Project-->
-        <div class="project-card" onclick="openModal('Dollar Store Vulnerability Finder', ['Evaluate LLM-Based Vulnerability Detection', 'Privacy-Preserving Code Analysis', 'User-Friendly Adoption'], 'https://github.com/JarvisLam-LemonCEO/CMPE209Project/tree/main')">
-          <div class="project-card-image" style="background-image: url('LLM.png')">
-            <i class="fas fa-robot"></i>
-          </div>
-          <div class="project-card-content">
-            <h3>Dollar Store Vulnerability Finder</h3>
-            <p class="short">Using LLM (Deepseek) to rewrite the safe code</p>
-            <div class="project-tags">
-              <span>Python</span>
-              <span>Qt</span>
-              <span>LLM (Deepseek)</span>
-            </div>
-            
-            <div class="links-container">
-              <a href="https://github.com/JarvisLam-LemonCEO/CMPE209Project/tree/main" target="_blank" onclick="event.stopPropagation()">
-                <i class="fab fa-github"></i> Code
-              </a> 
-              <a href="https://youtu.be/SrGBVvb-YE8" target="_blank" onclick="event.stopPropagation()">
-                <i class="fas fa-youtube"></i> Demo
-              </a>
-            </div>
-            </div>
-          </div>
-
-                  <!-- Club Dinner Invitation Tracker-->
-        <div class="project-card" onclick="openModal('Dinner Invitation & RSVP Tracker (PHP + MySQL)', [
-         'Public invitation submission (no login required)',
-         'Guest-level RSVP: Confirm / Not Confirm',
-         'Fixed-position buttons with clean UI',
-         'MySQL-backed data storage',
-         'Responsive design for desktop & mobile'
-       ], 'https://github.com/JarvisLam-LemonCEO/DinnerInvitationTracker.git')">
-          <div class="project-card-image" style="background-image: url('inviteTracker.png')">
-            <i class="fas fa-robot"></i>
-          </div>
-          <div class="project-card-content">
-            <h3>Dinner Invitation & RSVP Tracker</h3>
-            <p class="short">A PHP & MySQL web application that allows members to submit dinner invitations and manage guest RSVP status (Confirmed / Not Confirmed) on a public page.
-            </p>
-            <div class="project-tags">
-              <span>PHP</span>
-              <span>MySQL</span>
-              <span>HTML/CSS</span>
-              <span>InfinityFree</span>
-            </div>
-            
-            <div class="links-container">
-              <a href="https://github.com/JarvisLam-LemonCEO/DinnerInvitationTracker.git" target="_blank" onclick="event.stopPropagation()">
-                <i class="fab fa-github"></i> Code
-              </a> 
-            </div>
-            </div>
-          </div>
-
-
-        <!-- Project Card 2 - StreetEats -->
-        <div class="project-card" onclick="openModal('🍽️ StreetEats', ['Built an iOS app (Customer and Vendor sides)', 'UI design for customer and vendor', 'Implemented the biometric authentication function (touchID and faceID)'], 'https://github.com/JarvisLam-LemonCEO/CMPE137')">
-          <div class="project-card-image" style="background-image: url('StreetEats.jpg')">
-            <i class="fas fa-robot"></i>
-          </div>
-          <div class="project-card-content">
-            <h3>StreetEats (iOS app)</h3>
-            <p class="short">Mobile app project - Flutter/iOS</p>
-            <div class="project-tags">
-              <span>Flutter</span>
-              <span>iOS</span>
-              <span>Mobile App</span>
-            </div>
-            
-            <div class="links-container">
-              <a href="https://github.com/JarvisLam-LemonCEO/CMPE137" target="_blank" onclick="event.stopPropagation()">
-                <i class="fab fa-github"></i> Code
-              </a> 
-              <a href="https://youtu.be/1_ZM4L6EkdE" target="_blank" onclick="event.stopPropagation()">
-                <i class="fas fa-youtube"></i> Demo
-              </a>
-            </div>
-
-          </div>
-        </div>
-        
-        <!-- Project Card 3 - Voice Assistant -->
-        <div class="project-card" onclick="openModal('⚙️ Optimizing an Intelligent Voice Assistant on Android Platform', ['Implemented voice navigation commands (scroll, swipe, home, play video) for an Android-based intelligent voice assistant using Java and optimized command parsing with hash maps', 'Integrated in-app voice command parser, eliminating server dependency and enhancing performance; collaborated on debugging and resolving Android framework issues using AI tools and peer support', 'Led technical coordination with teammates via Discord, ensured task completion through reminders and deadlines, and contributed to project documentation and expo presentation'], 'https://github.com/JarvisLam-LemonCEO/BS-Senior-Project')">
-          <div class="project-card-image" style="background-image: url('SeniorProject.jpg')">
-            <i class="fas fa-robot"></i>
-          </div>
-          <div class="project-card-content">
-            <h3>Android Voice Assistant</h3>
-            <p class="short">Senior Project - Java/Android</p>
-            <div class="project-tags">
-              <span>Java</span>
-              <span>Android</span>
-              <span>AI</span>
-            </div>
-            
-            <div class="links-container">
-              <a href="https://github.com/JarvisLam-LemonCEO/BS-Senior-Project" target="_blank" onclick="event.stopPropagation()">
-                <i class="fab fa-github"></i> Code
-              </a> 
-              <a href="https://youtube.com/shorts/pTrI8CmQhfU" target="_blank" onclick="event.stopPropagation()">
-                <i class="fas fa-youtube"></i> Demo
-              </a>
-            </div>
-            
-          </div>
-        </div>
-
-        <!-- Project Card 4 - Restaurant Finder -->
-        <div class="project-card" onclick="openModal('📦 Restaurant Booking Management System', ['UI design for login, register, admin and customer', 'Implemented admin and restaurant owner page functions'],'https://github.com/JarvisLam-LemonCEO/cmpe202project')">
-          <div class="project-card-image" style="background-image: url('RestaurantFinder.jpg')">
-            <i class="fas fa-utensils"></i>
-          </div>
-          <div class="project-card-content">
-            <h3>Restaurant Finder</h3>
-            <p class="short">Booking Management System</p>
-            <div class="project-tags">
-              <span>JavaScript</span>
-              <span>Node.js</span>
-              <span>MongoDB</span>
-            </div>
-            <div class="links-container">
-              <a href="https://github.com/JarvisLam-LemonCEO/cmpe202project" target="_blank" onclick="event.stopPropagation()">
-                <i class="fab fa-github"></i> Code
-              </a>
-              <a href="https://youtu.be/iQRpQ5lE5jo" target="_blank" onclick="event.stopPropagation()">
-                <i class="fas fa-youtube"></i> Demo
-              </a>
-            </div>
-          </div>
-        </div>
-
-
-      <!-- Project Card 5 - MyChinaExperience -->
-        <div class="project-card" onclick="openModal('🛍️ MyChinaExperience', ['Database and marketplace features implementation', 'Implemented user login, reviews and show top 5 products of the marketplace', 'Implemented the browser history'],'https://github.com/JarvisLam-LemonCEO/CMPE272TeamProject')">
-          <div class="project-card-image" style="background-image: url('MyChina.jpg')">
-            <i class="fas fa-store"></i>
-          </div>
-          <div class="project-card-content">
-            <h3>MyChinaExperience</h3>
-            <p class="short">Restaurant Booking System</p>
-            <div class="project-tags">
-              <span>Node.js</span>
-              <span>MySQL</span>
-              <span>JavaScript</span>
-            </div>
-            <div class="links-container">
-              <a href="https://github.com/JarvisLam-LemonCEO/CMPE272TeamProject" target="_blank" onclick="event.stopPropagation()">
-                <i class="fab fa-github"></i> Code
-              </a>
-              <a href="https://youtu.be/K0GdGPxo6rg" target="_blank" onclick="event.stopPropagation()">
-                <i class="fas fa-youtube"></i> Demo
-              </a>
-            </div>
-          </div>
-        </div>
-  
-        
-        <!-- Project Card 6 - Car Rental System -->
-        <div class="project-card" onclick="openModal('🚗 Car Rental System', ['Built using HTML, PHP, MySQL, XAMPP', 'Managed issues through consistent Discord communication'],'https://github.com/JarvisLam-LemonCEO/cmpe138car-rental')">
-          <div class="project-card-image" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%)">
-            <i class="fas fa-car"></i>
-          </div>
-          <div class="project-card-content">
-            <h3>Car Rental System</h3>
-            <p class="short">PHP/MySQL web system</p>
-            <div class="project-tags">
-              <span>PHP</span>
-              <span>MySQL</span>
-              <span>HTML</span>
-            </div>
-            <div class="links-container">
-              <a href="https://github.com/JarvisLam-LemonCEO/cmpe138car-rental" target="_blank" onclick="event.stopPropagation()">
-                <i class="fab fa-github"></i> Code
-              </a>
-              <a href="#" target="_blank" onclick="event.stopPropagation()">
-                <i class="fas fa-youtube"></i> Demo
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>  <!--Closing tab for the project-->
-
-    </section>
-
-
-
-    <section>
-      <h2>Skills</h2>
-      <div class="card-container">
-        <div class="card">💻 C / C++ / Java / JS / Python / Verilog / HTML / PHP / SQL</div>
-        <div class="card">🛠️ XCode / Android Studio / VS Code</div>
-        <div class="card">🌐 Node.JS / MySQL</div>
-        <div class="card">📊 iWork / MS Office / Google Suite</div>
-        <div class="card">🎞 Final Cut Pro</div>
-        <div class="card">🖥️ macOS / Windows / Ubuntu</div>
-        <div class="card">🗣️ Languages: Cantonese, Mandarin, English</div>
+      <div class="skills-layout reveal">
+        <div class="skill-group"><h3>Languages</h3><p>C, C++, Java, JavaScript, Python, Verilog, HTML, PHP, SQL</p></div>
+        <div class="skill-group"><h3>Frameworks & Platforms</h3><p>React, Vite, FastAPI, Node.js, Firebase, Cloudinary, MySQL, MongoDB</p></div>
+        <div class="skill-group"><h3>Tools</h3><p>Docker, AWS, Xcode, Android Studio, VS Code, Git, LM Studio</p></div>
+        <div class="skill-group"><h3>Systems</h3><p>macOS, Windows, Ubuntu, Android, iOS, distributed systems, network security</p></div>
+        <div class="skill-group"><h3>Creative & Productivity</h3><p>Final Cut Pro, iWork, Microsoft Office, Google Suite</p></div>
+        <div class="skill-group"><h3>Languages Spoken</h3><p>Cantonese, Mandarin, English</p></div>
       </div>
     </section>
 
-    <section class="strengths-section">
-      <h2>Strengths</h2>
-      <ul class="strengths-list">
-        <li>Problem Solving: Analyze and solve complex problems effectively</li>
-        <li>Quick Learner: Enthusiastic and curious about learning new technologies</li>
-      </ul>
+    <section class="container section-pad-sm" id="education">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Academic background</p>
+        <h2>Education & Coursework</h2>
+      </div>
+      <div class="education-grid reveal">
+        <article class="education-card">
+          <span>B.S.</span>
+          <h3>Computer Engineering</h3>
+          <p>San Jose State University · Aug 2020 — Dec 2024</p>
+        </article>
+        <article class="education-card">
+          <span>M.S.</span>
+          <h3>Software Engineering</h3>
+          <p>San Jose State University · Jan 2024 — Present</p>
+        </article>
+      </div>
+      <div class="course-cloud reveal" aria-label="Related coursework">
+        <span>Advanced Algorithms</span><span>Data Structures</span><span>Operating Systems</span><span>Computer Networks</span><span>Compiler Design</span><span>Information Security</span><span>Database Systems</span><span>Computer Architecture</span><span>Mobile Software Engineering</span><span>Real-Time Embedded Systems</span><span>Enterprise Software Platforms</span><span>Network Security</span>
+      </div>
     </section>
 
+    <section class="container contact-panel section-pad-sm" id="contact">
+      <div class="reveal">
+        <p class="eyebrow">Let’s connect</p>
+        <h2>Open to internship and software engineering opportunities.</h2>
+      </div>
+      <div class="contact-actions reveal">
+        <a class="btn primary" href="mailto:jarvislamhk@gmail.com"><i class="fa-solid fa-envelope"></i> Email Me</a>
+        <a class="btn secondary" href="https://github.com/JarvisLam-LemonCEO" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/hei-lam-643738223/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </section>
+  </main>
 
-
-  <footer>
-    <p>&copy; 2025 Hei Lam (Jarvis) | Portfolio</p>
+  <footer class="footer">
+    <p>© <span id="year"></span> Hei Lam (Jarvis). Designed for GitHub Pages.</p>
   </footer>
 
-  <div id="projectModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <h3 id="modalTitle"></h3>
-      <ul id="modalList"></ul>
+  <dialog class="project-modal" id="projectModal">
+    <button class="modal-close" id="modalClose" aria-label="Close project details"><i class="fa-solid fa-xmark"></i></button>
+    <img id="modalImage" alt="" />
+    <div class="modal-body">
+      <p class="eyebrow" id="modalTags"></p>
+      <h2 id="modalTitle"></h2>
+      <p id="modalSummary"></p>
+      <ul id="modalDetails"></ul>
+      <div class="modal-links" id="modalLinks"></div>
     </div>
-  </div>
+  </dialog>
 
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark-mode');
-      document.body.classList.toggle('light-mode');
-    }
-    
-    function openModal(title, details, githubLink = '') {
-      document.getElementById("modalTitle").textContent = title;
-      
-      const list = document.getElementById("modalList");
-      list.innerHTML = '';
-      details.forEach(item => {
-        const li = document.createElement("li");
-        li.textContent = item;
-        list.appendChild(li);
-      });
-      
-      if (githubLink) {
-        const githubBtn = document.createElement("a");
-        githubBtn.href = githubLink;
-        githubBtn.target = "_blank";
-        githubBtn.className = "github-link";
-        githubBtn.innerHTML = '<i class="fab fa-github"></i> View on GitHub';
-        list.appendChild(githubBtn);
-      }
-      
-      document.getElementById("projectModal").style.display = "flex";
-    }
-    
-    function closeModal() {
-      document.getElementById("projectModal").style.display = "none";
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
-    
