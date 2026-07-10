@@ -15,6 +15,19 @@ const projects = [
     details: ['Distributed LLM inference across three machines', 'Dynamic VRAM-based layer splitting', 'Tracker service with heartbeat monitoring and request tracing'],
     links: [{label:'Code', url:'https://github.com/JarvisLam-LemonCEO/CMPE273-Project', icon:'fa-brands fa-github'}, {label:'Demo', url:'https://youtu.be/7Ucet6pAAik', icon:'fa-solid fa-play'}]
   },
+{
+  title: 'SplitMate',
+  summary: 'Modern iOS expense-splitting app built with SwiftUI and SwiftData for tracking shared expenses and simplified settlements.',
+  image: '',
+  tags: ['Swift', 'SwiftUI', 'SwiftData'],
+  details: [
+    'Built with Swift 6, SwiftUI, SwiftData, Xcode 16, and iOS 18+',
+    'Created group, member, expense, balance, and settings features',
+    'Implemented automatic balance calculation and simplified “Who Owes Whom” settlements'
+  ],
+  links: [{label:'Code', url:'https://github.com/JarvisLam-LemonCEO/SplitMate', icon:'fa-brands fa-github'}]
+},
+  
   {
     title: 'Phishing Detection System',
     summary: 'Python GUI application for phishing email analysis using heuristic checks, anomaly detection, and LLM-supported review.',
