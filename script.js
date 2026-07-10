@@ -18,7 +18,7 @@ const projects = [
 {
   title: 'SplitMate',
   summary: 'Modern iOS expense-splitting app built with SwiftUI and SwiftData for tracking shared expenses and simplified settlements.',
-  image: 'Group.png',
+  image: 'SplitMate.png',
   tags: ['Swift', 'SwiftUI', 'SwiftData'],
   details: [
     'Built with Swift 6, SwiftUI, SwiftData, Xcode 16, and iOS 18+',
