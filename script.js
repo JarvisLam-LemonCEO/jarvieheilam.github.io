@@ -1,5 +1,23 @@
 const projects = [
   {
+    title: 'Java Practice Library',
+    summary: 'Searchable Java study website that organizes practice questions, textbook exercises, and matched solutions with filtering, syntax highlighting, dark mode, and PDF export.',
+    image: '',
+    fallbackIcon: 'fa-brands fa-java',
+    tags: ['Java', 'JavaScript', 'Tailwind CSS', 'Python'],
+    details: ['Built searchable chapter and topic browsing for Java questions and exercises', 'Matched textbook exercises to solutions with Python data-import tooling', 'Added syntax highlighting, one-click solution copying, persistent light/dark themes, and print-friendly PDF exports', 'Generated a static Vercel-ready site with Node.js build scripts'],
+    links: [{label:'Code', url:'https://github.com/JarvisLam-LemonCEO/Java-Practice-it', icon:'fa-brands fa-github'}, {label:'Live Site', url:'https://java-practice-it.vercel.app', icon:'fa-solid fa-arrow-up-right-from-square'}]
+  },
+  {
+    title: 'CodeLearningLibrary — LeetCode Study Library',
+    summary: 'Searchable LeetCode study web app for browsing questions and multi-language solutions in C++, Java, and Python with navigation, dark mode, and PDF export.',
+    image: '',
+    fallbackIcon: 'fa-solid fa-code',
+    tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    details: ['Browse and search imported LeetCode problems by number or title', 'Switch between C++, Java, and Python solutions with support for multiple solution variants', 'Handles missing or Premium question statements while preserving available solution archives', 'Uses a static JSON import pipeline, Vercel deployment, and in-browser PDF export'],
+    links: [{label:'Code', url:'https://github.com/JarvisLam-LemonCEO/CodeLearningLibrary', icon:'fa-brands fa-github'}, {label:'Live Site', url:'https://code-learning-library.vercel.app', icon:'fa-solid fa-arrow-up-right-from-square'}]
+  },
+  {
     title: 'PixelVault — AI-Powered Media Gallery',
     summary: 'AI-enhanced media management platform with cloud galleries, drag-and-drop album management, photo retouching, and responsive UI design.',
     image: 'pixelvault.png',
@@ -88,6 +106,7 @@ const projects = [
     title: 'Car Rental System',
     summary: 'PHP and MySQL web system for rental workflows, built with XAMPP and team-based delivery.',
     image: '',
+    fallbackIcon: 'fa-solid fa-car',
     tags: ['PHP', 'MySQL', 'HTML'],
     details: ['Built using HTML, PHP, MySQL, and XAMPP', 'Managed issues through consistent team communication'],
     links: [{label:'Code', url:'https://github.com/JarvisLam-LemonCEO/cmpe138car-rental', icon:'fa-brands fa-github'}]
@@ -106,7 +125,7 @@ function createProjectCard(project, index) {
   card.setAttribute('aria-label', `Open details for ${project.title}`);
   const media = project.image
     ? `<img src="${project.image}" alt="${project.title} preview" loading="lazy">`
-    : `<div class="project-fallback"><i class="fa-solid fa-car"></i></div>`;
+    : `<div class="project-fallback"><i class="${project.fallbackIcon || 'fa-solid fa-code'}"></i></div>`;
   card.innerHTML = `
     <div class="project-media">${media}</div>
     <div class="project-content">
