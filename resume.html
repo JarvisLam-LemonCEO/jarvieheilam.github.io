@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hei Lam (Jarvis) - Print-Friendly Software Engineering Resume</title>
+  <meta name="description" content="Software Engineering resume for Hei Lam (Jarvis), M.S. student at San Jose State University." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Arial', 'sans-serif'] },
+          colors: { ink: '#172033', accent: '#1f4b99', muted: '#5f6b7a' }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    html { background: #eef1f5; }
+    body { margin: 0; background: #eef1f5; color: #172033; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+
+    /* Lightweight local fallbacks for the Tailwind utilities used in this document.
+       Tailwind CDN remains enabled for easy editing, but printing does not depend on it. */
+    .antialiased { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .fixed { position: fixed; } .bottom-5 { bottom: 1.25rem; } .right-5 { right: 1.25rem; } .z-50 { z-index: 50; }
+    .flex { display: flex; } .flex-wrap { flex-wrap: wrap; } .grid { display: grid; } .shrink-0 { flex-shrink: 0; }
+    .items-end { align-items: flex-end; } .justify-between { justify-content: space-between; }
+    .gap-2 { gap: .5rem; } .gap-4 { gap: 1rem; } .gap-5 { gap: 1.25rem; }
+    .gap-x-2 { column-gap: .5rem; } .gap-x-4 { column-gap: 1rem; } .gap-y-0\.5 { row-gap: .125rem; } .gap-y-1 { row-gap: .25rem; }
+    .grid-cols-\[1fr_auto\] { grid-template-columns: 1fr auto; } .grid-cols-\[126px_1fr\] { grid-template-columns: 126px 1fr; }
+    .space-y-2 > * + * { margin-top: .5rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; } .py-2 { padding-top: .5rem; padding-bottom: .5rem; }
+    .px-\[0\.55in\] { padding-left: .55in; padding-right: .55in; } .py-\[0\.42in\] { padding-top: .42in; padding-bottom: .42in; }
+    .pb-3 { padding-bottom: .75rem; } .pt-2\.5 { padding-top: .625rem; }
+    .mt-0\.5 { margin-top: .125rem; } .mt-1 { margin-top: .25rem; } .mt-1\.5 { margin-top: .375rem; } .mt-2 { margin-top: .5rem; } .mt-3\.5 { margin-top: .875rem; }
+    .mb-0\.5 { margin-bottom: .125rem; } .mb-1\.5 { margin-bottom: .375rem; } .mb-2 { margin-bottom: .5rem; } .mb-2\.5 { margin-bottom: .625rem; }
+    .ml-4 { margin-left: 1rem; }
+    .border-b-2 { border-bottom-width: 2px; border-bottom-style: solid; } .border-t { border-top-width: 1px; border-top-style: solid; }
+    .border-slate-800 { border-color: #1e293b; } .border-slate-300 { border-color: #cbd5e1; }
+    .rounded-lg { border-radius: .5rem; } .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1); }
+    .bg-slate-900 { background: #0f172a; } .text-white { color: #fff; }
+    .font-normal { font-weight: 400; } .font-medium { font-weight: 500; } .font-semibold { font-weight: 600; } .font-bold { font-weight: 700; } .font-extrabold { font-weight: 800; }
+    .text-right { text-align: right; } .uppercase { text-transform: uppercase; } .whitespace-nowrap { white-space: nowrap; }
+    .list-disc { list-style-type: disc; }
+    .text-sm { font-size: .875rem; line-height: 1.25rem; }
+    .text-\[26pt\] { font-size: 26pt; } .text-\[11\.5pt\] { font-size: 11.5pt; } .text-\[10\.15pt\] { font-size: 10.15pt; }
+    .text-\[9\.4pt\] { font-size: 9.4pt; } .text-\[9\.15pt\] { font-size: 9.15pt; } .text-\[9pt\] { font-size: 9pt; } .text-\[8\.8pt\] { font-size: 8.8pt; } .text-\[8\.7pt\] { font-size: 8.7pt; }
+    .leading-\[1\.30\] { line-height: 1.30; } .leading-\[1\.45\] { line-height: 1.45; }
+    .tracking-\[-0\.035em\] { letter-spacing: -.035em; } .tracking-\[0\.01em\] { letter-spacing: .01em; } .tracking-\[0\.14em\] { letter-spacing: .14em; }
+    .text-slate-950 { color: #020617; } .text-slate-800 { color: #1e293b; } .text-slate-700 { color: #334155; } .text-slate-600 { color: #475569; } .text-slate-500 { color: #64748b; }
+    .text-accent { color: #1f4b99; }
+
+    .sheet { width: 8.5in; min-height: 11in; margin: 24px auto; background: #fff; box-shadow: 0 14px 38px rgba(15,23,42,.12); }
+    .resume-bullet li { margin-bottom: .14rem; }
+    .resume-bullet li::marker { color: #1f4b99; }
+    .link { color: inherit; text-decoration: none; }
+    .link:hover { text-decoration: underline; }
+
+    /* Letter and A4 friendly: the selected paper size controls the physical page. */
+    @page { size: auto; margin: 0.38in 0.46in 0.40in 0.46in; }
+
+    @media print {
+      html, body { background: #fff !important; color: #111827 !important; -webkit-print-color-adjust: economy; print-color-adjust: economy; }
+      .sheet { width: auto !important; min-height: 0 !important; max-width: none !important; margin: 0 !important; padding: 0 !important; box-shadow: none !important; background: #fff !important; }
+      main { font-size: 8.85pt !important; line-height: 1.18 !important; }
+      .no-print { display: none !important; }
+      a { color: inherit !important; text-decoration: none !important; }
+
+      /* High-contrast grayscale for office printers and ATS PDFs. */
+      .text-accent { color: #111827 !important; }
+      .resume-bullet li::marker { color: #111827 !important; }
+      .text-slate-500, .text-slate-600, .text-slate-700, .text-slate-800, .text-slate-950 { color: #111827 !important; }
+      .border-slate-300, .border-slate-800 { border-color: #6b7280 !important; }
+
+      /* Prevent awkward content splits. */
+      header, h1, h2, h3 { break-after: avoid-page; page-break-after: avoid; }
+      article { break-inside: avoid-page; page-break-inside: avoid; }
+      li { break-inside: avoid; page-break-inside: avoid; }
+      section { orphans: 2; widows: 2; }
+
+      /* Print-only compaction preserves the one-page recruiter layout. */
+      header { padding-bottom: 5px !important; }
+      header h1 { font-size: 21.5pt !important; }
+      header p { margin-top: 2px !important; }
+      section.mt-3\.5 { margin-top: 5px !important; }
+      article.mb-2\.5 { margin-bottom: 3px !important; }
+      .mt-2 { margin-top: 3px !important; }
+      .mt-1\.5 { margin-top: 2px !important; }
+      .mb-2 { margin-bottom: 2px !important; }
+      .mb-1\.5 { margin-bottom: 1px !important; }
+      .pt-2\.5 { padding-top: 3px !important; }
+      .resume-bullet { margin-top: 0 !important; }
+      .resume-bullet li { margin-bottom: 1px !important; }
+      .space-y-2 > * + * { margin-top: 3px !important; }
+      .text-\[11\.5pt\] { font-size: 10.3pt !important; }
+      .text-\[9\.4pt\] { font-size: 8.75pt !important; }
+      .text-\[9\.15pt\] { font-size: 8.6pt !important; }
+      .text-\[9pt\] { font-size: 8.45pt !important; }
+      .text-\[8\.8pt\], .text-\[8\.7pt\] { font-size: 8.15pt !important; }
+      .leading-\[1\.45\] { line-height: 1.25 !important; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="no-print fixed bottom-5 right-5 z-50 flex gap-2">
+    <button onclick="window.print()" class="rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-lg hover:bg-slate-700">Print / Save PDF</button>
+  </div>
+
+  <main class="sheet px-[0.55in] py-[0.42in] text-[10.15pt] leading-[1.30]">
+    <header class="border-b-2 border-slate-800 pb-3">
+      <div class="flex items-end justify-between gap-5">
+        <div>
+          <h1 class="text-[26pt] font-extrabold tracking-[-0.035em] text-slate-950">HEI LAM <span class="font-semibold text-slate-500">(JARVIS)</span></h1>
+          <p class="mt-1 text-[11.5pt] font-semibold tracking-[0.01em] text-accent">Software Engineering M.S. Candidate • AI/ML • Full-Stack • Systems</p>
+        </div>
+        <div class="shrink-0 text-right text-[8.7pt] leading-[1.45] text-slate-600">
+          <div>San Jose, CA</div>
+          <div><a class="link" href="mailto:jarvislamhk@gmail.com">jarvislamhk@gmail.com</a> • <a class="link" href="tel:+16693507228">(669) 350-7228</a></div>
+        </div>
+      </div>
+      <div class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[8.7pt] font-medium text-slate-600">
+        <a class="link" href="https://linkedin.com/in/hei-lam-643738223">linkedin.com/in/hei-lam-643738223</a>
+        <a class="link" href="https://github.com/JarvisLam-LemonCEO">github.com/JarvisLam-LemonCEO</a>
+        <a class="link" href="https://jarvieheilam-github-io.vercel.app/">jarvieheilam-github-io.vercel.app</a>
+      </div>
+    </header>
+
+    <section class="mt-3.5">
+      <h2 class="mb-1.5 text-[9pt] font-extrabold uppercase tracking-[0.14em] text-accent">Profile</h2>
+      <p class="text-[9.4pt] text-slate-700">
+        Software Engineering graduate student with a Computer Engineering foundation and hands-on experience building AI-assisted security tools, full-stack web applications, and network-aware software. Strong in Python, Java, C/C++, JavaScript, React, Node.js, AWS, and applied machine learning; recognized for analytical problem solving, ownership, and translating technical requirements into working products.
+      </p>
+    </section>
+
+    <section class="mt-3.5">
+      <h2 class="mb-2 text-[9pt] font-extrabold uppercase tracking-[0.14em] text-accent">Education</h2>
+      <div class="space-y-2">
+        <div class="grid grid-cols-[1fr_auto] gap-4">
+          <div>
+            <div class="font-bold text-slate-950">San Jose State University — San Jose, CA</div>
+            <div class="font-semibold">M.S., Software Engineering <span class="font-normal text-slate-500">• Charles W. Davidson College of Engineering</span></div>
+          </div>
+          <div class="whitespace-nowrap text-[9pt] font-semibold text-slate-600">Jan 2024 — Present</div>
+        </div>
+        <div class="grid grid-cols-[1fr_auto] gap-4">
+          <div>
+            <div class="font-bold text-slate-950">San Jose State University — San Jose, CA</div>
+            <div class="font-semibold">B.S., Computer Engineering <span class="font-normal text-slate-500">• Charles W. Davidson College of Engineering</span></div>
+          </div>
+          <div class="whitespace-nowrap text-[9pt] font-semibold text-slate-600">Aug 2020 — Dec 2024</div>
+        </div>
+      </div>
+      <p class="mt-1.5 text-[8.8pt] text-slate-600"><span class="font-semibold text-slate-700">Relevant coursework:</span> Software Systems Engineering, Information Security, Network Security, Software Security Technologies, Database Systems, Mobile Software Engineering</p>
+    </section>
+
+    <section class="mt-3.5">
+      <h2 class="mb-2 text-[9pt] font-extrabold uppercase tracking-[0.14em] text-accent">Selected Project Experience</h2>
+
+      <article class="mb-2.5">
+        <div class="grid grid-cols-[1fr_auto] gap-4">
+          <h3 class="font-bold text-slate-950">Phishing Detection System <span class="font-medium text-slate-500">— SJSU</span></h3>
+          <span class="whitespace-nowrap text-[8.8pt] font-semibold text-slate-600">Fall 2025</span>
+        </div>
+        <div class="mb-0.5 text-[8.7pt] font-semibold text-accent">Python • scikit-learn • Isolation Forest • LM Studio • Tkinter</div>
+        <ul class="resume-bullet ml-4 list-disc text-[9.15pt] text-slate-700">
+          <li>Built a phishing-detection application analyzing <strong>517K Enron emails</strong> with heuristic scoring and Isolation Forest anomaly detection.</li>
+          <li>Integrated a locally hosted LLM and Tkinter interface to produce hybrid risk scores and human-readable explanations for uploaded email datasets.</li>
+        </ul>
+      </article>
+
+      <article class="mb-2.5">
+        <div class="grid grid-cols-[1fr_auto] gap-4">
+          <h3 class="font-bold text-slate-950">AI-Assisted C/C++ Vulnerability Analyzer <span class="font-medium text-slate-500">— SJSU</span></h3>
+          <span class="whitespace-nowrap text-[8.8pt] font-semibold text-slate-600">Spring 2025</span>
+        </div>
+        <div class="mb-0.5 text-[8.7pt] font-semibold text-accent">C/C++ • Local LLM • Software Security</div>
+        <ul class="resume-bullet ml-4 list-disc text-[9.15pt] text-slate-700">
+          <li>Developed an AI-assisted analyzer for memory-safety issues including buffer overflows and race-condition patterns in C/C++ source code.</li>
+          <li>Generated diagnostic steps and prioritized remediation guidance with local LLM prompts, validating the workflow across multiple open-source samples.</li>
+        </ul>
+      </article>
+
+      <article>
+        <div class="grid grid-cols-[1fr_auto] gap-4">
+          <h3 class="font-bold text-slate-950">Restaurant Booking Web Application <span class="font-medium text-slate-500">— SJSU</span></h3>
+          <span class="whitespace-nowrap text-[8.8pt] font-semibold text-slate-600">Spring 2025</span>
+        </div>
+        <div class="mb-0.5 text-[8.7pt] font-semibold text-accent">React • Node.js • Express.js • Vite • REST APIs</div>
+        <ul class="resume-bullet ml-4 list-disc text-[9.15pt] text-slate-700">
+          <li>Developed and deployed an OpenTable-style reservation system with role-based workflows for customers, business owners, and administrators.</li>
+          <li>Built REST APIs and React interfaces for search, reservations, and restaurant management; optimized Vite builds and component structure to improve page-load time by <strong>~30%</strong>.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="mt-3.5">
+      <h2 class="mb-2 text-[9pt] font-extrabold uppercase tracking-[0.14em] text-accent">Leadership Experience</h2>
+      <div class="grid grid-cols-[1fr_auto] gap-4">
+        <h3 class="font-bold text-slate-950">Activities Coordinator — Chinese Campus Fellowship, SJSU</h3>
+        <span class="whitespace-nowrap text-[8.8pt] font-semibold text-slate-600">Aug 2025 — Present</span>
+      </div>
+      <ul class="resume-bullet ml-4 mt-0.5 list-disc text-[9.15pt] text-slate-700">
+        <li>Coordinate cross-organization cultural and community events, owning promotion, program planning, rehearsal schedules, logistics, and on-stage execution.</li>
+        <li>Organize social events including billiards and bowling nights to strengthen participation and community engagement.</li>
+      </ul>
+    </section>
+
+    <section class="mt-3.5 border-t border-slate-300 pt-2.5">
+      <h2 class="mb-1.5 text-[9pt] font-extrabold uppercase tracking-[0.14em] text-accent">Technical Skills</h2>
+      <div class="grid grid-cols-[126px_1fr] gap-x-2 gap-y-0.5 text-[9pt]">
+        <div class="font-bold text-slate-800">Languages</div><div class="text-slate-700">Python, Java, C/C++, JavaScript, HTML, SQL, Verilog, PHP</div>
+        <div class="font-bold text-slate-800">Frameworks / Platforms</div><div class="text-slate-700">React, Vite, FastAPI, Node.js, Express.js, Firebase, Cloudinary, MySQL, MongoDB</div>
+        <div class="font-bold text-slate-800">Tools / Systems</div><div class="text-slate-700">AWS, Docker, Git/GitHub, Xcode, Android Studio, VS Code, LM Studio, Linux/Ubuntu, iOS, Android</div>
+        <div class="font-bold text-slate-800">Languages Spoken</div><div class="text-slate-700">Cantonese, Mandarin, English</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

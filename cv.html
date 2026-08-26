@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hei Lam (Jarvis) — Print-Optimized Detailed Curriculum Vitae</title>
+  <meta name="description" content="Detailed curriculum vitae for Hei Lam (Jarvis), Software Engineering M.S. student at San Jose State University." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Arial', 'sans-serif'] },
+          colors: { ink: '#172033', accent: '#1f4b99', muted: '#5f6b7a', soft: '#f5f7fb' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="cv-tailwind.css" />
+  <style>
+    * { box-sizing: border-box; }
+    html { background: #eef1f5; }
+    body { margin: 0; color: #172033; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+    .sheet { width: 8.5in; margin: 24px auto; background: #fff; box-shadow: 0 14px 40px rgba(15,23,42,.12); }
+    .cv-bullet li { margin-bottom: .25rem; }
+    .cv-bullet li::marker { color: #1f4b99; }
+    .link { color: inherit; text-decoration: none; }
+    .link:hover { text-decoration: underline; }
+    .avoid-break { break-inside: avoid; page-break-inside: avoid; }
+    .section-title { border-bottom: 1px solid #cbd5e1; padding-bottom: 5px; margin-bottom: 10px; color: #1f4b99; font-size: 9.7pt; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; }
+    .project-title { font-size: 10.2pt; font-weight: 800; color: #0f172a; }
+    .tech-line { margin-top: 1px; color: #1f4b99; font-size: 8.6pt; font-weight: 700; }
+    .date-line { color: #64748b; font-size: 8.7pt; font-weight: 650; white-space: nowrap; }
+    .small-caps { font-size: 7.8pt; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; color: #64748b; }
+    /* Print-first layout: browser paper size drives Letter/A4 output. */
+    @page { size: auto; margin: 0.50in 0.55in 0.55in 0.55in; }
+
+    @media print {
+      html, body {
+        background: #fff !important;
+        color: #111827 !important;
+        print-color-adjust: economy;
+        -webkit-print-color-adjust: economy;
+      }
+
+      /* The @page margin already supplies the physical margin. Do not double it. */
+      .sheet {
+        width: auto !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        background: #fff !important;
+      }
+
+      main {
+        font-size: 9.35pt !important;
+        line-height: 1.34 !important;
+      }
+
+      .no-print { display: none !important; }
+      a { color: inherit !important; text-decoration: none !important; }
+
+      /* High-contrast, low-ink treatment. */
+      .section-title {
+        color: #111827 !important;
+        border-color: #9ca3af !important;
+        margin-top: 0 !important;
+        margin-bottom: 8px !important;
+        padding-bottom: 4px !important;
+      }
+      .tech-line, .text-accent { color: #374151 !important; }
+      .cv-bullet li::marker { color: #111827 !important; }
+      .bg-soft { background: #fff !important; }
+      .bg-accent { background: #111827 !important; }
+      .border-slate-200, .border-slate-900 { border-color: #9ca3af !important; }
+      .text-slate-400, .text-slate-500, .text-slate-600, .text-slate-700, .text-slate-800, .text-slate-950 {
+        color: #111827 !important;
+      }
+
+      /* Prevent orphaned headings, but allow long projects to continue naturally. */
+      h1, h2, h3, .section-title, .project-header {
+        break-after: avoid-page;
+        page-break-after: avoid;
+      }
+      .project-header {
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+      }
+      .project-entry {
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+        margin-bottom: 11px !important;
+      }
+      .project-entry li,
+      .cv-bullet li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .project-entry ul {
+        orphans: 2;
+        widows: 2;
+      }
+      .avoid-break {
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+      }
+
+      /* Compress screen spacing slightly without sacrificing readability. */
+      section.mt-5 { margin-top: 14px !important; }
+      article.mb-4 { margin-bottom: 11px !important; }
+      .mt-6 { margin-top: 14px !important; }
+      header { padding-bottom: 10px !important; }
+      header h1 { font-size: 24pt !important; }
+      header p { line-height: 1.34 !important; }
+
+      /* Footer is useful on paper; screen-only note is not. */
+      footer {
+        margin-top: 12px !important;
+        padding-top: 5px !important;
+        color: #4b5563 !important;
+        border-color: #d1d5db !important;
+      }
+
+      .page-break-before { break-before: page; page-break-before: always; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="no-print fixed bottom-5 right-5 z-50 flex gap-2">
+    <button onclick="window.print()" class="rounded-lg bg-slate-950 px-4 py-2 text-sm font-semibold text-white shadow-xl hover:bg-slate-700">Print / Save PDF</button>
+  </div>
+
+  <main class="sheet px-[0.58in] py-[0.48in] text-[9.35pt] leading-[1.4]">
+    <header class="relative border-b-[2.5px] border-slate-900 pb-4">
+      <div class="absolute left-0 top-0 h-full w-[5px] rounded-full bg-accent"></div>
+      <div class="pl-4">
+        <div class="flex items-end justify-between gap-6">
+          <div>
+            <h1 class="text-[28pt] font-extrabold tracking-[-0.045em] text-slate-950">HEI LAM <span class="font-semibold text-slate-500">(JARVIS)</span></h1>
+            <p class="mt-1 text-[11.7pt] font-bold text-accent">Software Engineer · AI/ML · Distributed Systems · Full-Stack · iOS</p>
+          </div>
+          <div class="hidden text-right text-[8.3pt] font-semibold uppercase tracking-[.12em] text-slate-400 sm:block">Curriculum Vitae</div>
+        </div>
+        <p class="mt-2 max-w-[7.05in] text-[9.15pt] leading-[1.45] text-slate-600">
+          Software Engineering M.S. student at San Jose State University with a Computer Engineering foundation and hands-on experience building distributed AI infrastructure, machine-learning network systems, privacy-focused iOS applications, cybersecurity tools, and cloud-backed web products. Comfortable working across application, systems, networking, and AI layers—from model serving and REST services to native mobile UX and production-oriented frontend architecture.
+        </p>
+        <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[8.65pt] font-semibold text-slate-600">
+          <span>San Jose, CA</span>
+          <a class="link" href="mailto:jarvislamhk@gmail.com">jarvislamhk@gmail.com</a>
+          <a class="link" href="tel:+16693507228">(669) 350-7228</a>
+          <a class="link" href="https://linkedin.com/in/hei-lam-643738223">linkedin.com/in/hei-lam-643738223</a>
+          <a class="link" href="https://github.com/JarvisLam-LemonCEO">github.com/JarvisLam-LemonCEO</a>
+          <a class="link" href="https://jarvieheilam-github-io.vercel.app/">jarvieheilam-github-io.vercel.app</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="mt-5 avoid-break">
+      <h2 class="section-title">Professional Profile</h2>
+      <p class="text-slate-700">
+        Engineering-focused graduate student with experience translating academic concepts into working software systems. Project work spans distributed large-language-model inference, machine-learning-assisted load balancing, phishing and vulnerability detection, iOS privacy/security applications, AI-assisted travel planning, expense-management software, and cloud media platforms. Strongest areas include Python backend development, Swift/iOS development, React-based frontend engineering, applied machine learning, computer networking, cybersecurity, Docker-based environments, and cloud deployment. Known for taking ownership of end-to-end implementation, debugging across layers, and explaining technical systems clearly to teammates and users.
+      </p>
+    </section>
+
+    <section class="mt-5 avoid-break">
+      <h2 class="section-title">Education</h2>
+      <div class="space-y-3">
+        <div class="grid grid-cols-[1fr_auto] gap-5">
+          <div>
+            <h3 class="text-[10pt] font-extrabold text-slate-950">Master of Science in Software Engineering</h3>
+            <p class="font-semibold text-slate-700">San Jose State University · Charles W. Davidson College of Engineering · San Jose, CA</p>
+          </div>
+          <p class="date-line">Jan 2024 — Present</p>
+        </div>
+        <div class="grid grid-cols-[1fr_auto] gap-5">
+          <div>
+            <h3 class="text-[10pt] font-extrabold text-slate-950">Bachelor of Science in Computer Engineering</h3>
+            <p class="font-semibold text-slate-700">San Jose State University · Charles W. Davidson College of Engineering · San Jose, CA</p>
+          </div>
+          <p class="date-line">Aug 2020 — Dec 2024</p>
+        </div>
+      </div>
+
+      <div class="mt-3 grid grid-cols-2 gap-x-6 gap-y-2 rounded-lg border border-slate-200 bg-soft px-3 py-2.5 text-[8.75pt]">
+        <div><span class="small-caps">Algorithms & Systems</span><br><span class="text-slate-700">Advanced Algorithms, Data Structures, Operating Systems, Computer Architecture, Compiler Design, Real-Time Embedded Systems</span></div>
+        <div><span class="small-caps">Networks & Security</span><br><span class="text-slate-700">Computer Networks, Network Security, Information Security, Software Security Technologies</span></div>
+        <div><span class="small-caps">Software & Data</span><br><span class="text-slate-700">Software Systems Engineering, Enterprise Software Platforms, Database Systems</span></div>
+        <div><span class="small-caps">Application Engineering</span><br><span class="text-slate-700">Mobile Software Engineering and project-based full-stack, cloud, AI, and distributed-systems development</span></div>
+      </div>
+    </section>
+
+    <section class="mt-5 avoid-break">
+      <h2 class="section-title">Technical Expertise</h2>
+      <div class="grid grid-cols-[132px_1fr] gap-x-3 gap-y-1.5 text-[8.95pt]">
+        <div class="font-extrabold text-slate-800">Languages</div><div class="text-slate-700">Python, Java, C, C++, JavaScript, Swift, SQL, HTML, PHP, Verilog</div>
+        <div class="font-extrabold text-slate-800">Web & APIs</div><div class="text-slate-700">React, Vite, Node.js, Express.js, FastAPI, REST APIs, React Router, Tailwind CSS</div>
+        <div class="font-extrabold text-slate-800">AI / ML</div><div class="text-slate-700">scikit-learn, Hugging Face, LM Studio, local LLM integration, Isolation Forest, regression models, anomaly detection, model-serving workflows</div>
+        <div class="font-extrabold text-slate-800">iOS / Apple</div><div class="text-slate-700">SwiftUI, SwiftData, MapKit, Vision, VisionKit, Swift Charts, LocalAuthentication, PDFKit, PhotosUI, UIKit, Xcode</div>
+        <div class="font-extrabold text-slate-800">Cloud & DevOps</div><div class="text-slate-700">AWS, Docker, Docker Compose, Terraform, Firebase Authentication, Firestore, Cloudinary, Vercel, nginx</div>
+        <div class="font-extrabold text-slate-800">Systems & Networks</div><div class="text-slate-700">Linux/Ubuntu, macOS, Windows, distributed systems, OpenFlow, Mininet, Ryu, network security, computer architecture</div>
+        <div class="font-extrabold text-slate-800">Data & Storage</div><div class="text-slate-700">MySQL, MongoDB, Firestore, pandas, CSV-based data pipelines, safetensors model weights</div>
+        <div class="font-extrabold text-slate-800">Developer Tools</div><div class="text-slate-700">Git, GitHub, VS Code, Android Studio, pytest, shell scripting, LM Studio, command-line debugging</div>
+      </div>
+    </section>
+
+    <section id="selected-projects" class="mt-5">
+      <h2 class="section-title">Selected Technical Projects</h2>
+
+      <article class="project-entry mb-4">
+        <div class="project-header grid grid-cols-[1fr_auto] gap-4">
+          <div>
+            <h3 class="project-title">Lumina — Distributed Split LLM Inference</h3>
+            <p class="tech-line">Python · Hugging Face · PyTorch · FastAPI/REST · Docker · AWS · Terraform · React/Vite · nginx</p>
+          </div>
+          <div class="text-right"><p class="date-line">SJSU · 2026</p><a class="text-[8pt] font-semibold text-slate-500 hover:underline" href="https://github.com/JarvisLam-LemonCEO/CMPE273-Project">GitHub ↗</a></div>
+        </div>
+        <ul class="cv-bullet ml-5 mt-1.5 list-disc text-slate-700">
+          <li>Built a distributed inference architecture that partitions transformer layers across <strong>three physically separate machines</strong>, with head, middle, and tail nodes exchanging serialized hidden states over REST services.</li>
+          <li>Implemented a tracker service for node registration, heartbeats, liveness monitoring, request tracing, assignment versioning, and dynamic layer-boundary calculation based on each node's available VRAM.</li>
+          <li>Implemented memory-aware CPU model loading using PyTorch's meta device and direct safetensors access so each node materializes only the embedding/layers/output components it executes instead of loading an entire model.</li>
+          <li>Supported multiple transformer families, including Qwen2/Qwen2-MoE, GPT-2, and Phi-3/Phi-4 Mini, while keeping model-specific behavior behind an adapter layer.</li>
+          <li>Containerized the multi-service topology with Docker Compose; created AWS-oriented deployment assets with EC2/Terraform configurations and an nginx reverse proxy.</li>
+          <li>Developed a React/Vite operations dashboard for text generation, node health, CPU/RAM/VRAM visibility, cluster topology, request traces, and client-side logs.</li>
+        </ul>
+      </article>
+
+      <article class="project-entry mb-4">
+        <div class="project-header grid grid-cols-[1fr_auto] gap-4">
+          <div>
+            <h3 class="project-title">ML-Based Software-Defined Network Load Balancer</h3>
+            <p class="tech-line">Python · Ryu · Mininet · OpenFlow 1.3 · scikit-learn · pandas · Linux · iperf3</p>
+          </div>
+          <div class="text-right"><p class="date-line">SJSU · Spring 2026</p><a class="text-[8pt] font-semibold text-slate-500 hover:underline" href="https://github.com/JarvisLam-LemonCEO/CMPE210-Project">GitHub ↗</a></div>
+        </div>
+        <ul class="cv-bullet ml-5 mt-1.5 list-disc text-slate-700">
+          <li>Designed an SDN test environment in Mininet using an OpenFlow switch, a Ryu controller, one client, and three backend servers to evaluate programmable load-balancing strategies.</li>
+          <li>Implemented a virtual-IP Round Robin controller with DNAT/SNAT and fast-path flow installation, then developed a Least-Loaded policy based on active-flow counts.</li>
+          <li>Built a data-collection and training pipeline that evaluates Decision Tree, Random Forest, and Ridge Regression models using RMSE and saves the best model for runtime use.</li>
+          <li>Integrated the trained model into an adaptive Ryu controller that predicts backend latency from traffic rate, active flows, and load imbalance, selecting the server with the lowest predicted latency while applying balancing penalties.</li>
+          <li>Created repeatable latency, throughput, ping, and packet-drop benchmark scripts and summarized results for comparison across routing strategies.</li>
+        </ul>
+      </article>
+
+      <article class="project-entry mb-4">
+        <div class="project-header grid grid-cols-[1fr_auto] gap-4">
+          <div>
+            <h3 class="project-title">PixelVault — AI-Enhanced Cloud Media Platform</h3>
+            <p class="tech-line">React · Vite · Tailwind CSS · Firebase Auth · Firestore · Cloudinary · Hugging Face · Vercel</p>
+          </div>
+          <div class="text-right"><p class="date-line">SJSU · 2026</p><a class="text-[8pt] font-semibold text-slate-500 hover:underline" href="https://github.com/JarvisLam-LemonCEO/CMPE280Hackathon">GitHub ↗</a></div>
+        </div>
+        <ul class="cv-bullet ml-5 mt-1.5 list-disc text-slate-700">
+          <li>Co-developed a responsive single-page media-management platform that combines cloud photo/video organization with AI-assisted editing workflows.</li>
+          <li>Integrated Firebase Authentication and protected routes for account workflows, Firestore for cloud-backed application data, and Cloudinary for scalable media upload and delivery.</li>
+          <li>Built gallery search/filtering, custom albums, multi-select workflows, drag-and-drop ordering, comments/likes, profile management, and responsive dark/light interfaces with reusable React components.</li>
+          <li>Integrated Hugging Face inference into a preview-before-apply, non-destructive AI photo-retouching flow and deployed the application on Vercel.</li>
+        </ul>
+      </article>
+
+      <article class="project-entry mb-4">
+        <div class="project-header grid grid-cols-[1fr_auto] gap-4">
+          <div>
+            <h3 class="project-title">ScamShield — Privacy-Focused iOS Scam Detection</h3>
+            <p class="tech-line">Swift · SwiftUI · SwiftData · Vision/VisionKit · LocalAuthentication · PDFKit · Combine</p>
+          </div>
+          <div class="text-right"><p class="date-line">Personal Project · 2026</p><a class="text-[8pt] font-semibold text-slate-500 hover:underline" href="https://github.com/JarvisLam-LemonCEO/LemonScamShield">GitHub ↗</a></div>
+        </div>
+        <ul class="cv-bullet ml-5 mt-1.5 list-disc text-slate-700">
+          <li>Developed a native iOS security application that analyzes suspicious text, URLs, phone numbers, screenshots, and camera-scanned documents for phishing and scam indicators.</li>
+          <li>Designed an explainable rule-based risk engine that breaks scores down across suspicious URLs, credential/payment requests, brand impersonation, threat language, urgency, secrecy, remote-access requests, and recognized scam patterns.</li>
+          <li>Integrated Vision OCR and VisionKit document scanning to extract text from screenshots and physical documents before local risk analysis.</li>
+          <li>Implemented local scan-history persistence and search/filtering with SwiftData, optional Face ID/Touch ID/passcode protection, and PDF security-report generation for sharing or printing findings.</li>
+          <li>Designed the product around privacy-first principles: no required account, no advertising/tracking, local OCR, and on-device analysis whenever possible.</li>
+        </ul>
+      </article>
+
+      <article class="project-entry mb-4">
+        <div class="project-header grid grid-cols-[1fr_auto] gap-4">
+          <div>
+            <h3 class="project-title">SplitMate — Native iOS Expense-Splitting Application</h3>
+            <p class="tech-line">Swift 6 · SwiftUI · SwiftData · Swift Charts · Vision · PDFKit · PhotosUI</p>
+          </div>
+          <div class="text-right"><p class="date-line">Personal Project · 2026</p><a class="text-[8pt] font-semibold text-slate-500 hover:underline" href="https://github.com/JarvisLam-LemonCEO/SplitMate">GitHub ↗</a></div>
+        </div>
+        <ul class="cv-bullet ml-5 mt-1.5 list-disc text-slate-700">
+          <li>Built a native expense-sharing application for friends, roommates, classmates, and travel groups with persistent group, member, expense, payment, and settings models.</li>
+          <li>Implemented balance calculations that compute each participant's share, maintain member net balances, and simplify debts into clear “who owes whom” settlement recommendations.</li>
+          <li>Added restaurant-specific splitting with subtotal, tax, tip, automatic total calculation, equal splitting, and per-person costs.</li>
+          <li>Integrated Vision OCR for attached receipt images, Swift Charts for spending/category analytics, configurable appearance/currency settings, and PDF group-summary generation.</li>
+          <li>Structured the application with reusable views/components and dedicated services for balance calculations, statistics, restaurant splitting, OCR, PDF rendering, and user settings.</li>
+        </ul>
+      </article>
+
+      <article class="project-entry mb-4">
+        <div class="project-header grid grid-cols-[1fr_auto] gap-4">
+          <div>
+            <h3 class="project-title">Lemon Travel Planner — AI-Assisted iOS Itinerary Planner</h3>
+            <p class="tech-line">Swift · SwiftUI · SwiftData · MapKit · LM Studio · REST APIs · Local LLMs</p>
+          </div>
+          <div class="text-right"><p class="date-line">Personal Project · 2026</p><a class="text-[8pt] font-semibold text-slate-500 hover:underline" href="https://github.com/JarvisLam-LemonCEO/LemonTravelPlanner">GitHub ↗</a></div>
+        </div>
+        <ul class="cv-bullet ml-5 mt-1.5 list-disc text-slate-700">
+          <li>Developed an iOS travel-planning application for trip creation, day-by-day itinerary generation, activity editing, transportation records, cost estimation, and persistent trip storage.</li>
+          <li>Integrated a locally hosted language model through LM Studio's OpenAI-compatible chat-completions endpoint, enabling AI itinerary generation without requiring a cloud-only workflow.</li>
+          <li>Built provider-switching configuration for mock, local LM Studio, and remote/OpenAI-style backends to separate product features from the underlying AI service.</li>
+          <li>Integrated MapKit-based place search and route calculation so generated plans can be connected to real locations and map-based trip views.</li>
+          <li>Organized the codebase around distinct models, services, and feature modules to keep itinerary generation, place lookup, routing, and UI responsibilities maintainable.</li>
+        </ul>
+      </article>
+
+      <article class="project-entry mb-4">
+        <div class="project-header grid grid-cols-[1fr_auto] gap-4">
+          <div>
+            <h3 class="project-title">Phishing Detection System</h3>
+            <p class="tech-line">Python · scikit-learn · Isolation Forest · LM Studio · Tkinter · Data Analysis</p>
+          </div>
+          <p class="date-line">SJSU · Fall 2025</p>
+        </div>
+        <ul class="cv-bullet ml-5 mt-1.5 list-disc text-slate-700">
+          <li>Built a phishing-detection application that processed approximately <strong>517,000 Enron emails</strong> to identify suspicious messages using a hybrid detection approach.</li>
+          <li>Combined heuristic/rule-based scoring with Isolation Forest anomaly detection to surface unusual or high-risk email patterns.</li>
+          <li>Integrated a locally hosted LLM through LM Studio to supplement model/rule outputs with more human-readable phishing-risk explanations.</li>
+          <li>Developed a Tkinter desktop interface for CSV ingestion, scan execution, risk display, and explanation review.</li>
+        </ul>
+      </article>
+
+      <article class="project-entry mb-4">
+        <div class="project-header grid grid-cols-[1fr_auto] gap-4">
+          <div>
+            <h3 class="project-title">AI-Assisted C/C++ Vulnerability Analyzer</h3>
+            <p class="tech-line">C · C++ · Python · Local LLMs · Static Analysis · Software Security</p>
+          </div>
+          <p class="date-line">SJSU · Spring 2025</p>
+        </div>
+        <ul class="cv-bullet ml-5 mt-1.5 list-disc text-slate-700">
+          <li>Developed an AI-assisted source-code analysis workflow for identifying memory-safety and concurrency risks in C/C++ programs.</li>
+          <li>Focused analysis on security-relevant patterns such as buffer overflows, unsafe memory operations, and race-condition risks.</li>
+          <li>Used locally hosted LLM prompts to produce diagnostic explanations and prioritized remediation guidance rather than returning only raw warnings.</li>
+          <li>Evaluated the workflow against multiple open-source code samples to identify unsafe patterns and support manual security review.</li>
+        </ul>
+      </article>
+
+      <article class="project-entry mb-4">
+        <div class="project-header grid grid-cols-[1fr_auto] gap-4">
+          <div>
+            <h3 class="project-title">Restaurant Booking Web Application</h3>
+            <p class="tech-line">JavaScript · React · Node.js · Express.js · Vite · REST APIs</p>
+          </div>
+          <p class="date-line">SJSU · Spring 2025</p>
+        </div>
+        <ul class="cv-bullet ml-5 mt-1.5 list-disc text-slate-700">
+          <li>Developed and deployed an OpenTable-style full-stack reservation application with distinct workflows for customers, business owners, and administrators.</li>
+          <li>Implemented REST APIs with Node.js/Express and React interfaces for restaurant discovery, reservations, account flows, and restaurant-management tasks.</li>
+          <li>Refactored frontend component/build organization and optimized Vite delivery, improving page-load performance by approximately <strong>30%</strong> while making feature maintenance easier.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="mt-5 avoid-break">
+      <h2 class="section-title">Leadership & Campus Engagement</h2>
+      <div class="project-header grid grid-cols-[1fr_auto] gap-4">
+        <div>
+          <h3 class="project-title">Activities Coordinator — Chinese Campus Fellowship</h3>
+          <p class="font-semibold text-slate-600">San Jose State University</p>
+        </div>
+        <p class="date-line">Aug 2025 — Present</p>
+      </div>
+      <ul class="cv-bullet ml-5 mt-1.5 list-disc text-slate-700">
+        <li>Coordinate cultural and community events with student organizations, including cross-organization Mid-Autumn Festival programming with the Hong Kong Student Association.</li>
+        <li>Manage event planning details spanning promotion, logistics, activity design, participant coordination, and execution.</li>
+        <li>Plan and host Praise & Worship Night, coordinating program flow, rehearsal schedules, communication, and on-stage execution.</li>
+        <li>Organize recurring social activities such as billiards and bowling nights to strengthen participation and member engagement.</li>
+      </ul>
+    </section>
+
+    <section class="mt-5 avoid-break">
+      <h2 class="section-title">Engineering Strengths</h2>
+      <div class="grid grid-cols-3 gap-2 text-[8.65pt]">
+        <div class="rounded-md border border-slate-200 px-2.5 py-2"><span class="font-extrabold text-slate-800">Systems Thinking</span><br><span class="text-slate-600">Comfortable tracing behavior across networking, APIs, model execution, storage, and UI layers.</span></div>
+        <div class="rounded-md border border-slate-200 px-2.5 py-2"><span class="font-extrabold text-slate-800">End-to-End Ownership</span><br><span class="text-slate-600">Builds projects from architecture and implementation through testing, deployment, documentation, and demos.</span></div>
+        <div class="rounded-md border border-slate-200 px-2.5 py-2"><span class="font-extrabold text-slate-800">Applied AI</span><br><span class="text-slate-600">Uses ML/LLMs as engineering components inside measurable, user-facing workflows rather than standalone demos.</span></div>
+      </div>
+    </section>
+
+    <section class="mt-5 avoid-break">
+      <h2 class="section-title">Languages & Additional Tools</h2>
+      <div class="grid grid-cols-[132px_1fr] gap-x-3 gap-y-1.5 text-[8.95pt]">
+        <div class="font-extrabold text-slate-800">Spoken Languages</div><div class="text-slate-700">Cantonese (Native) · Mandarin (Native) · English (Fluent)</div>
+        <div class="font-extrabold text-slate-800">Productivity</div><div class="text-slate-700">Microsoft Office · Google Workspace · Apple iWork</div>
+        <div class="font-extrabold text-slate-800">Creative</div><div class="text-slate-700">Final Cut Pro</div>
+      </div>
+    </section>
+
+    <footer class="mt-6 border-t border-slate-200 pt-2 text-center text-[7.6pt] text-slate-400">
+      Hei Lam (Jarvis) · Detailed Curriculum Vitae · jarvieheilam-github-io.vercel.app
+    </footer>
+  </main>
+</body>
+</html>
