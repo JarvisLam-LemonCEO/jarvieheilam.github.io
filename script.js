@@ -2,7 +2,7 @@ const projects = [
   {
     title: 'Java Practice Library',
     summary: 'Searchable Java study website that organizes practice questions, textbook exercises, and matched solutions with filtering, syntax highlighting, dark mode, and PDF export.',
-    image: '',
+    image: 'Java Practice Library.png',
     fallbackIcon: 'fa-brands fa-java',
     tags: ['Java', 'JavaScript', 'Tailwind CSS', 'Python'],
     details: ['Built searchable chapter and topic browsing for Java questions and exercises', 'Matched textbook exercises to solutions with Python data-import tooling', 'Added syntax highlighting, one-click solution copying, persistent light/dark themes, and print-friendly PDF exports', 'Generated a static Vercel-ready site with Node.js build scripts'],
@@ -11,7 +11,7 @@ const projects = [
   {
     title: 'CodeLearningLibrary — LeetCode Study Library',
     summary: 'Searchable LeetCode study web app for browsing questions and multi-language solutions in C++, Java, and Python with navigation, dark mode, and PDF export.',
-    image: '',
+    image: 'CodeLearningLibrary.png',
     fallbackIcon: 'fa-solid fa-code',
     tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     details: ['Browse and search imported LeetCode problems by number or title', 'Switch between C++, Java, and Python solutions with support for multiple solution variants', 'Handles missing or Premium question statements while preserving available solution archives', 'Uses a static JSON import pipeline, Vercel deployment, and in-browser PDF export'],
