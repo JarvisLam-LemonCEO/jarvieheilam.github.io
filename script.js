@@ -121,3 +121,33 @@ function openProject(index){const p=projects[index];document.getElementById('mod
 renderFeatured();renderGrid();document.addEventListener('click',e=>{const t=e.target.closest('[data-project]');if(t)openProject(Number(t.dataset.project))});modalClose.addEventListener('click',()=>modal.close());modal.addEventListener('click',e=>{if(e.target===modal)modal.close()});modal.addEventListener('close',()=>document.body.classList.remove('modal-open'));document.getElementById('year').textContent=new Date().getFullYear();
 const navToggle=document.getElementById('navToggle'),navLinks=document.getElementById('navLinks');function closeNav(){navLinks.classList.remove('open');navToggle.classList.remove('active');navToggle.setAttribute('aria-expanded','false');navToggle.setAttribute('aria-label','Open navigation')}navToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');navToggle.classList.toggle('active',open);navToggle.setAttribute('aria-expanded',String(open));navToggle.setAttribute('aria-label',open?'Close navigation':'Open navigation')});navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNav));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNav()});window.addEventListener('resize',()=>{if(window.innerWidth>720)closeNav()});
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.11,rootMargin:'0px 0px -35px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+
+// Appearance mode: use a saved choice when available, otherwise follow the device preference.
+const themeToggle = document.getElementById('themeToggle');
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+function applyTheme(theme, persist = false) {
+  const nextTheme = theme === 'dark' ? 'dark' : 'light';
+  document.documentElement.dataset.theme = nextTheme;
+  if (themeColorMeta) themeColorMeta.setAttribute('content', nextTheme === 'dark' ? '#161617' : '#f5f5f7');
+  if (themeToggle) {
+    const dark = nextTheme === 'dark';
+    themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    themeToggle.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    themeToggle.setAttribute('aria-pressed', String(dark));
+  }
+  if (persist) localStorage.setItem('portfolio-theme', nextTheme);
+}
+
+applyTheme(document.documentElement.dataset.theme || (systemTheme.matches ? 'dark' : 'light'));
+
+themeToggle?.addEventListener('click', () => {
+  const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  applyTheme(nextTheme, true);
+});
+
+systemTheme.addEventListener?.('change', event => {
+  if (!localStorage.getItem('portfolio-theme')) applyTheme(event.matches ? 'dark' : 'light');
+});

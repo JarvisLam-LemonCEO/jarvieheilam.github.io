@@ -52,3 +52,93 @@
     font-size: 24px;
   }
 }
+
+
+/* Light / dark appearance */
+.theme-toggle {
+  order: 3;
+  width: 32px;
+  height: 32px;
+  margin-left: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  position: relative;
+  flex: 0 0 auto;
+  color: #1d1d1f;
+  background: rgba(0, 0, 0, .055);
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease, color .2s ease;
+}
+.theme-toggle:hover { background: rgba(0, 0, 0, .1); transform: scale(1.04); }
+.theme-toggle:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.theme-icon { position: absolute; width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: opacity .2s ease, transform .3s ease; }
+.theme-icon-sun { opacity: 1; transform: rotate(0) scale(1); }
+.theme-icon-moon { opacity: 0; transform: rotate(-18deg) scale(.72); }
+.nav-links { order: 2; margin-left: auto; }
+.wordmark { order: 1; }
+.nav-toggle { order: 4; }
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #f5f5f7;
+  --muted: #a1a1a6;
+  --soft: #161617;
+  --line: #38383a;
+  --blue: #2997ff;
+  --dark: #000;
+}
+html[data-theme="dark"] body { background: #000; }
+html[data-theme="dark"] .global-nav {
+  background: rgba(22, 22, 23, .82);
+  border-bottom-color: rgba(255, 255, 255, .08);
+}
+html[data-theme="dark"] .wordmark,
+html[data-theme="dark"] .nav-links a { color: #f5f5f7; }
+html[data-theme="dark"] .theme-toggle { color: #f5f5f7; background: rgba(255, 255, 255, .1); }
+html[data-theme="dark"] .theme-toggle:hover { background: rgba(255, 255, 255, .16); }
+html[data-theme="dark"] .theme-icon-sun { opacity: 0; transform: rotate(18deg) scale(.72); }
+html[data-theme="dark"] .theme-icon-moon { opacity: 1; transform: rotate(0) scale(1); }
+html[data-theme="dark"] .nav-toggle span { background: #f5f5f7; }
+html[data-theme="dark"] .hero {
+  background:
+    radial-gradient(circle at 50% 76%, rgba(25, 83, 148, .42), transparent 27%),
+    radial-gradient(circle at 24% 70%, rgba(91, 43, 125, .34), transparent 28%),
+    linear-gradient(#050506, #000 70%);
+}
+html[data-theme="dark"] .floating-card {
+  border-color: rgba(255, 255, 255, .12);
+  background: rgba(28, 28, 30, .72);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .34);
+}
+html[data-theme="dark"] .floating-icon { background: rgba(41, 151, 255, .16); }
+html[data-theme="dark"] .feature-project { background: #161617; color: #f5f5f7; }
+html[data-theme="dark"] .feature-project.cool { background: linear-gradient(#111827, #08111f); }
+html[data-theme="dark"] .feature-project.warm { background: linear-gradient(#211712, #120d0a); }
+html[data-theme="dark"] .feature-project.cool .summary,
+html[data-theme="dark"] .feature-project.warm .summary,
+html[data-theme="dark"] .feature-project.cool .feature-tags,
+html[data-theme="dark"] .feature-project.warm .feature-tags { color: #a1a1a6; }
+html[data-theme="dark"] .section-soft { background: #101011; }
+html[data-theme="dark"] .project-card {
+  background: #1c1c1e;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .045);
+}
+html[data-theme="dark"] .project-card:hover { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .07), 0 24px 55px rgba(0, 0, 0, .35); }
+html[data-theme="dark"] .project-fallback { background: linear-gradient(145deg, #2c2c2e, #1c1c1e); color: #a1a1a6; }
+html[data-theme="dark"] .section-dark { background: #050505; }
+html[data-theme="dark"] .project-modal { background: #1c1c1e; color: #f5f5f7; }
+html[data-theme="dark"] .modal-close { color: #f5f5f7; background: rgba(58, 58, 60, .92); }
+html[data-theme="dark"] .modal-media { background: #111; }
+html[data-theme="dark"] .modal-body ul { color: #d1d1d6; }
+html[data-theme="dark"] .footer { background: #000; }
+
+@media (max-width: 720px) {
+  .wordmark { margin-right: auto; }
+  .theme-toggle { margin-left: 0; margin-right: 2px; order: 2; }
+  .nav-toggle { order: 3; }
+  .nav-links { order: 4; margin-left: 0; }
+  html[data-theme="dark"] .nav-links a { border-bottom-color: #38383a; }
+}
