@@ -112,89 +112,12 @@ const projects = [
     links: [{label:'Code', url:'https://github.com/JarvisLam-LemonCEO/cmpe138car-rental', icon:'fa-brands fa-github'}]
   }
 ];
-
-const projectGrid = document.getElementById('projectGrid');
-const modal = document.getElementById('projectModal');
-const modalClose = document.getElementById('modalClose');
-
-function createProjectCard(project, index) {
-  const card = document.createElement('article');
-  card.className = 'project-card reveal';
-  card.tabIndex = 0;
-  card.setAttribute('role', 'button');
-  card.setAttribute('aria-label', `Open details for ${project.title}`);
-  const media = project.image
-    ? `<img src="${project.image}" alt="${project.title} preview" loading="lazy">`
-    : `<div class="project-fallback"><i class="${project.fallbackIcon || 'fa-solid fa-code'}"></i></div>`;
-  card.innerHTML = `
-    <div class="project-media">${media}</div>
-    <div class="project-content">
-      <div class="tag-row">${project.tags.slice(0, 3).map(tag => `<span>${tag}</span>`).join('')}</div>
-      <h3>${project.title}</h3>
-      <p>${project.summary}</p>
-      <div class="project-card-footer"><span>View details</span><i class="fa-solid fa-arrow-right"></i></div>
-    </div>`;
-  card.addEventListener('click', () => openProject(index));
-  card.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      openProject(index);
-    }
-  });
-  return card;
-}
-
-function openProject(index) {
-  const project = projects[index];
-  document.getElementById('modalTitle').textContent = project.title;
-  document.getElementById('modalSummary').textContent = project.summary;
-  document.getElementById('modalTags').textContent = project.tags.join(' · ');
-  const image = document.getElementById('modalImage');
-  if (project.image) {
-    image.src = project.image;
-    image.alt = `${project.title} preview`;
-    image.style.display = 'block';
-  } else {
-    image.style.display = 'none';
-  }
-  document.getElementById('modalDetails').innerHTML = project.details.map(detail => `<li>${detail}</li>`).join('');
-  document.getElementById('modalLinks').innerHTML = project.links.map(link => `<a href="${link.url}" target="_blank" rel="noopener"><i class="${link.icon}"></i>${link.label}</a>`).join('');
-  modal.showModal();
-}
-
-projects.forEach((project, index) => projectGrid.appendChild(createProjectCard(project, index)));
-modalClose.addEventListener('click', () => modal.close());
-modal.addEventListener('click', (event) => { if (event.target === modal) modal.close(); });
-
-document.getElementById('year').textContent = new Date().getFullYear();
-
-const themeToggle = document.getElementById('themeToggle');
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') document.body.classList.add('light-mode');
-updateThemeIcon();
-
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
-  localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-  updateThemeIcon();
-});
-
-function updateThemeIcon() {
-  themeToggle.innerHTML = document.body.classList.contains('light-mode') ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-}
-
-const mobileMenu = document.getElementById('mobileMenu');
-const navLinks = document.getElementById('navLinks');
-mobileMenu.addEventListener('click', () => navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const featuredConfig=[{index:2,theme:'dark',label:'AI media platform'},{index:3,theme:'cool',label:'Distributed AI infrastructure'},{index:4,theme:'warm',label:'Native iOS app'},{index:1,theme:'dark',label:'Developer learning platform'}];
+const featuredIndexes=new Set(featuredConfig.map(x=>x.index));
+const featuredContainer=document.getElementById('featuredProjects'),projectGrid=document.getElementById('projectGrid'),modal=document.getElementById('projectModal'),modalClose=document.getElementById('modalClose'),modalMedia=document.getElementById('modalMedia');
+function renderFeatured(){featuredConfig.forEach(({index,theme,label})=>{const p=projects[index],primary=p.links[p.links.length-1]||p.links[0],el=document.createElement('article');el.className=`feature-project ${theme}`;el.innerHTML=`<div class="feature-copy reveal"><p class="kicker">${label}</p><h3>${p.title}</h3><p class="summary">${p.summary}</p><p class="feature-tags">${p.tags.join(' · ')}</p><div class="feature-actions"><button class="text-link" type="button" data-project="${index}">Learn more ›</button>${primary?`<a class="text-link" href="${primary.url}" target="_blank" rel="noopener">${primary.label} ↗</a>`:''}</div></div><div class="feature-media reveal">${p.image?`<img src="${p.image}" alt="${p.title} project interface" loading="lazy">`:`<div class="project-fallback">${p.title[0]}</div>`}</div>`;featuredContainer.appendChild(el)})}
+function renderGrid(){projects.forEach((p,index)=>{if(featuredIndexes.has(index))return;const first=p.links[0],el=document.createElement('article');el.className='project-card reveal';el.innerHTML=`<div class="project-card-copy"><p class="kicker">${p.tags[0]||'Project'}</p><h3>${p.title}</h3><p>${p.summary}</p><div class="mini-tags">${p.tags.join(' · ')}</div><div class="card-actions"><button type="button" data-project="${index}">Details ›</button>${first?`<a href="${first.url}" target="_blank" rel="noopener">${first.label} ↗</a>`:''}</div></div><div class="project-card-media">${p.image?`<img src="${p.image}" alt="${p.title} project preview" loading="lazy">`:`<div class="project-fallback">${p.title[0]}</div>`}</div>`;projectGrid.appendChild(el)})}
+function openProject(index){const p=projects[index];document.getElementById('modalTitle').textContent=p.title;document.getElementById('modalSummary').textContent=p.summary;document.getElementById('modalTags').textContent=p.tags.join(' · ');document.getElementById('modalDetails').innerHTML=p.details.map(x=>`<li>${x}</li>`).join('');document.getElementById('modalLinks').innerHTML=p.links.map(x=>`<a href="${x.url}" target="_blank" rel="noopener">${x.label} ↗</a>`).join('');modalMedia.innerHTML=p.image?`<img src="${p.image}" alt="${p.title} project preview">`:'';modal.showModal();document.body.classList.add('modal-open')}
+renderFeatured();renderGrid();document.addEventListener('click',e=>{const t=e.target.closest('[data-project]');if(t)openProject(Number(t.dataset.project))});modalClose.addEventListener('click',()=>modal.close());modal.addEventListener('click',e=>{if(e.target===modal)modal.close()});modal.addEventListener('close',()=>document.body.classList.remove('modal-open'));document.getElementById('year').textContent=new Date().getFullYear();
+const navToggle=document.getElementById('navToggle'),navLinks=document.getElementById('navLinks');navToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');navToggle.classList.toggle('active',open);navToggle.setAttribute('aria-expanded',String(open));document.body.classList.toggle('modal-open',open)});navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');navToggle.classList.remove('active');navToggle.setAttribute('aria-expanded','false');document.body.classList.remove('modal-open')}));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.11,rootMargin:'0px 0px -35px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
