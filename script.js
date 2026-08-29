@@ -1,5 +1,13 @@
 const projects = [
   {
+    title: 'MarkItDown — Python 3.14 Edition',
+    summary: 'Python 3.14-compatible modification of Microsoft MarkItDown with streamlined macOS and Windows installers, updated dependencies, and a globally available CLI.',
+    image: 'MarkItDown.svg',
+    tags: ['Python', 'Packaging', 'GitHub Actions', 'Docker', 'macOS/Windows'],
+    details: ['Added explicit Python 3.14 support across package metadata and the test matrix', 'Updated Magika and YouTube transcript dependencies for Python 3.14 compatibility', 'Built automatic macOS and Windows installers that create managed environments and expose a global markitdown command without manual virtual-environment activation', 'Updated Docker and CI workflows for the patched local package', 'Independent modification of Microsoft MarkItDown with the upstream MIT license and attribution preserved'],
+    links: [{label:'Code', url:'https://github.com/JarvisLam-LemonCEO/markitdown-revise', icon:'fa-brands fa-github'}]
+  },
+  {
     title: 'Java Practice Library',
     summary: 'Searchable Java study website that organizes practice questions, textbook exercises, and matched solutions with filtering, syntax highlighting, dark mode, and PDF export.',
     image: 'Java Practice Library.png',
@@ -112,7 +120,7 @@ const projects = [
     links: [{label:'Code', url:'https://github.com/JarvisLam-LemonCEO/cmpe138car-rental', icon:'fa-brands fa-github'}]
   }
 ];
-const featuredConfig=[{index:2,theme:'dark',label:'AI media platform'},{index:3,theme:'cool',label:'Distributed AI infrastructure'},{index:4,theme:'warm',label:'Native iOS app'},{index:1,theme:'dark',label:'Developer learning platform'}];
+const featuredConfig=[{index:0,theme:'cool',label:'Developer tooling · Python 3.14'},{index:3,theme:'dark',label:'AI media platform'},{index:4,theme:'cool',label:'Distributed AI infrastructure'},{index:5,theme:'warm',label:'Native iOS app'},{index:2,theme:'dark',label:'Developer learning platform'}];
 const featuredIndexes=new Set(featuredConfig.map(x=>x.index));
 const featuredContainer=document.getElementById('featuredProjects'),projectGrid=document.getElementById('projectGrid'),modal=document.getElementById('projectModal'),modalClose=document.getElementById('modalClose'),modalMedia=document.getElementById('modalMedia');
 function renderFeatured(){featuredConfig.forEach(({index,theme,label})=>{const p=projects[index],primary=p.links[p.links.length-1]||p.links[0],el=document.createElement('article');el.className=`feature-project ${theme}`;el.innerHTML=`<div class="feature-copy reveal"><p class="kicker">${label}</p><h3>${p.title}</h3><p class="summary">${p.summary}</p><p class="feature-tags">${p.tags.join(' · ')}</p><div class="feature-actions"><button class="text-link" type="button" data-project="${index}">Learn more ›</button>${primary?`<a class="text-link" href="${primary.url}" target="_blank" rel="noopener">${primary.label} ↗</a>`:''}</div></div><div class="feature-media reveal">${p.image?`<img src="${p.image}" alt="${p.title} project interface" loading="lazy">`:`<div class="project-fallback">${p.title[0]}</div>`}</div>`;featuredContainer.appendChild(el)})}
